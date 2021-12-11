@@ -60,6 +60,8 @@ public class FillSurface : EditorWindow
         {
             ClearSurface();
         }
+
+        
     }
 
     private void FillPathPoints()
