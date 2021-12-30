@@ -15061,10 +15061,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 1793912797}
-  _auxForward: {fileID: 0}
+  _velocity: 3
+  _animator: {fileID: 1793912798}
+  _auxForward: {fileID: 1001777340}
   _isRotating: 0
-  currentEulerAngles: {x: 0, y: 0, z: 0}
-  targetEulerAngles: {x: 0, y: 0, z: 0}
 --- !u!136 &1793912793
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -5,13 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBody;
+    [SerializeField] private float _velocity;
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _auxForward;
     private SceneObject _sceneObject;
     public bool _isRotating = false;
     private bool _hasRotated = false;
-    public Vector3 currentEulerAngles;
-    public Vector3 targetEulerAngles;
 
     private CurrentRotationDegrees currentRotationDegrees = CurrentRotationDegrees._0;
 
@@ -32,17 +31,11 @@ public class Player : MonoBehaviour
         Right
     }
 
-    private void Start()
-    {
-        currentEulerAngles = transform.eulerAngles;
-        targetEulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y - 90, currentEulerAngles.z);
-    }
-
     private void Velocity()
     {
         if(_isRotating == false) 
         { 
-            _rigidBody.velocity = _auxForward.forward;
+            _rigidBody.velocity = _auxForward.forward * _velocity;
         }
         else
         {
@@ -80,27 +73,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator SetNewMapRotation(RotationType rotationType)
-    {
-        currentEulerAngles = transform.localEulerAngles;
-        targetEulerAngles = new Vector3(0,0,0);
-        switch (rotationType)
-        {
-            case RotationType.Left:
-                targetEulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y - 90, currentEulerAngles.z);
-                break;
-            case RotationType.Right:
-                targetEulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y + 90, currentEulerAngles.z);
-                break;
-        }
-        _isRotating = true;
-        //transform.eulerAngles = Vector3.Lerp(currentEulerAngles, targetEulerAngles, Time.deltaTime*1.2f);
-        //transform.eulerAngles = targetEulerAngles;
-        yield return new WaitForSeconds(3);
-        _isRotating = false;
-        _hasRotated = true;
-    }
-
     private void GetRotationInput()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -119,7 +91,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator PerformPlayerRotation(RotationType rotationType)
     {
-        //_isRotating = true;
+        _isRotating = true;
         string triggerString = "";
         switch (rotationType)
         {
@@ -185,17 +157,5 @@ public class Player : MonoBehaviour
         GetRotationInput();
         Velocity();
         Rotation();
-        //PerformPlayerRotation();
-        //Debug.Log(transform.localEulerAngles);
-        /*
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && _isRotating == false)
-        {
-            StartCoroutine(PerformPlayerRotation(RotationType.Left));
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow) && _isRotating == false)
-        {
-            StartCoroutine(PerformPlayerRotation(RotationType.Right));
-        }
-        */
     }
 }
