@@ -177,15 +177,17 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.55f);
         _animator.ResetTrigger(triggerString);
         _isRotating = false;
+        _hasRotated = true;
     }
 
     void LateUpdate()
     {
-        //GetRotationInput();
-        //Velocity();
-        //Rotation();
+        GetRotationInput();
+        Velocity();
+        Rotation();
         //PerformPlayerRotation();
         //Debug.Log(transform.localEulerAngles);
+        /*
         if (Input.GetKeyDown(KeyCode.LeftArrow) && _isRotating == false)
         {
             StartCoroutine(PerformPlayerRotation(RotationType.Left));
@@ -194,5 +196,6 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(PerformPlayerRotation(RotationType.Right));
         }
+        */
     }
 }
