@@ -5,12 +5,23 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBody;
+    [SerializeField] private Animator _animator;
     [SerializeField] private Transform _auxForward;
     private SceneObject _sceneObject;
     public bool _isRotating = false;
     private bool _hasRotated = false;
     public Vector3 currentEulerAngles;
     public Vector3 targetEulerAngles;
+
+    private CurrentRotationDegrees currentRotationDegrees = CurrentRotationDegrees._0;
+
+    private enum CurrentRotationDegrees
+    {
+        _0,
+        _90,
+        _180,
+        _270
+    }
 
     private RotationType rotationType = RotationType.Null; 
 
@@ -48,7 +59,7 @@ public class Player : MonoBehaviour
                 _isRotating = true;
                 _hasRotated = false;
                 transform.position = _sceneObject.transform.position;
-                StartCoroutine(SetNewMapRotation(rotationType));
+                StartCoroutine(PerformPlayerRotation(rotationType));
             }
         }
     }
@@ -106,21 +117,66 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator PerformPlayerRotation()
+    private IEnumerator PerformPlayerRotation(RotationType rotationType)
     {
-        //if(_isRotating == true)
-        transform.eulerAngles -= new Vector3(0,0.1f,0);
-        yield return new WaitForSeconds(0.001f);
-        Debug.Log(transform.eulerAngles.y + " "+ targetEulerAngles.y);
-        if(transform.eulerAngles.y > targetEulerAngles.y)
+        //_isRotating = true;
+        string triggerString = "";
+        switch (rotationType)
         {
-            StartCoroutine(PerformPlayerRotation());
+            case RotationType.Left:
+                switch (currentRotationDegrees)
+                {
+                    case CurrentRotationDegrees._0:
+                        _animator.SetTrigger("270");
+                        triggerString = "270";
+                        currentRotationDegrees = CurrentRotationDegrees._270;
+                        break;
+                    case CurrentRotationDegrees._90:
+                        _animator.SetTrigger("0");
+                        triggerString = "0";
+                        currentRotationDegrees = CurrentRotationDegrees._0;
+                        break;
+                    case CurrentRotationDegrees._180:
+                        _animator.SetTrigger("90");
+                        triggerString = "90";
+                        currentRotationDegrees = CurrentRotationDegrees._90;
+                        break;
+                    case CurrentRotationDegrees._270:
+                        _animator.SetTrigger("180");
+                        triggerString = "180";
+                        currentRotationDegrees = CurrentRotationDegrees._180;
+                        break;
+                }
+                break;
+            case RotationType.Right:
+                switch (currentRotationDegrees)
+                {
+                    case CurrentRotationDegrees._0:
+                        _animator.SetTrigger("90");
+                        triggerString = "90";
+                        currentRotationDegrees = CurrentRotationDegrees._90;
+                        break;
+                    case CurrentRotationDegrees._90:
+                        _animator.SetTrigger("180");
+                        triggerString = "180";
+                        currentRotationDegrees = CurrentRotationDegrees._180;
+                        break;
+                    case CurrentRotationDegrees._180:
+                        _animator.SetTrigger("270");
+                        triggerString = "270";
+                        currentRotationDegrees = CurrentRotationDegrees._270;
+                        break;
+                    case CurrentRotationDegrees._270:
+                        _animator.SetTrigger("0");
+                        triggerString = "0";
+                        currentRotationDegrees = CurrentRotationDegrees._0;
+                        break;
+                }
+                break;
         }
-        else
-        {
-            transform.eulerAngles = targetEulerAngles;
-            targetEulerAngles -= new Vector3(0, 90, 0);
-        }
+        yield return new WaitForSeconds(0.55f);
+        _animator.ResetTrigger(triggerString);
+        _isRotating = false;
     }
 
     void LateUpdate()
@@ -130,10 +186,13 @@ public class Player : MonoBehaviour
         //Rotation();
         //PerformPlayerRotation();
         //Debug.Log(transform.localEulerAngles);
-        Debug.Log(transform.eulerAngles.y);
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && _isRotating == false)
         {
-            StartCoroutine(PerformPlayerRotation());
+            StartCoroutine(PerformPlayerRotation(RotationType.Left));
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow) && _isRotating == false)
+        {
+            StartCoroutine(PerformPlayerRotation(RotationType.Right));
         }
     }
 }
