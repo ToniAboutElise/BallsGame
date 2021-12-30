@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Transform _mapTransform;
     [SerializeField] private Rigidbody _rigidBody;
+    [SerializeField] private Transform _auxForward;
     private SceneObject _sceneObject;
-    private bool _isRotating = false;
+    public bool _isRotating = false;
     private bool _hasRotated = false;
+    public Vector3 currentEulerAngles;
+    public Vector3 targetEulerAngles;
 
     private RotationType rotationType = RotationType.Null; 
 
@@ -19,21 +21,34 @@ public class Player : MonoBehaviour
         Right
     }
 
+    private void Start()
+    {
+        currentEulerAngles = transform.eulerAngles;
+        targetEulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y - 90, currentEulerAngles.z);
+    }
+
     private void Velocity()
     {
-        if(_isRotating == false)
-        _rigidBody.velocity = Vector3.forward;
+        if(_isRotating == false) 
+        { 
+            _rigidBody.velocity = _auxForward.forward;
+        }
+        else
+        {
+            _rigidBody.velocity = new Vector3(0,0,0);
+        }
     }
 
     private void Rotation()
     {
         if(_sceneObject != null && Vector3.Distance(transform.localPosition, _sceneObject.transform.position) < 0.07f && _hasRotated == false)
-        {
-            transform.position = _sceneObject.transform.position;
-
-            if(rotationType != RotationType.Null)
+        {   
+            if(rotationType != RotationType.Null && _isRotating == false && _hasRotated == false)
             {
-                //Start rotation here
+                _isRotating = true;
+                _hasRotated = false;
+                transform.position = _sceneObject.transform.position;
+                StartCoroutine(SetNewMapRotation(rotationType));
             }
         }
     }
@@ -54,33 +69,34 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SetNewMapRotation(RotationType rotationType)
+    private IEnumerator SetNewMapRotation(RotationType rotationType)
     {
-        Vector3 currentEulerAngles = _mapTransform.localEulerAngles;
-        Vector3 targetEulerAngles = new Vector3(0,0,0);
-
+        currentEulerAngles = transform.localEulerAngles;
+        targetEulerAngles = new Vector3(0,0,0);
         switch (rotationType)
         {
             case RotationType.Left:
-                targetEulerAngles = new Vector3(_mapTransform.localEulerAngles.x, _mapTransform.localEulerAngles.y + 90, _mapTransform.localEulerAngles.z);
+                targetEulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y - 90, currentEulerAngles.z);
                 break;
             case RotationType.Right:
-                targetEulerAngles = new Vector3(_mapTransform.localEulerAngles.x, _mapTransform.localEulerAngles.y - 90, _mapTransform.localEulerAngles.z);
+                targetEulerAngles = new Vector3(currentEulerAngles.x, currentEulerAngles.y + 90, currentEulerAngles.z);
                 break;
         }
-
-        _mapTransform.transform.eulerAngles = Vector3.Lerp(currentEulerAngles, targetEulerAngles, Time.deltaTime*1.2f);
+        _isRotating = true;
+        //transform.eulerAngles = Vector3.Lerp(currentEulerAngles, targetEulerAngles, Time.deltaTime*1.2f);
+        //transform.eulerAngles = targetEulerAngles;
+        yield return new WaitForSeconds(3);
         _isRotating = false;
         _hasRotated = true;
     }
 
     private void GetRotationInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             rotationType = RotationType.Left;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             rotationType = RotationType.Right;
         }
@@ -90,11 +106,34 @@ public class Player : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private IEnumerator PerformPlayerRotation()
     {
-        GetRotationInput();
+        //if(_isRotating == true)
+        transform.eulerAngles -= new Vector3(0,0.1f,0);
+        yield return new WaitForSeconds(0.001f);
+        Debug.Log(transform.eulerAngles.y + " "+ targetEulerAngles.y);
+        if(transform.eulerAngles.y > targetEulerAngles.y)
+        {
+            StartCoroutine(PerformPlayerRotation());
+        }
+        else
+        {
+            transform.eulerAngles = targetEulerAngles;
+            targetEulerAngles -= new Vector3(0, 90, 0);
+        }
+    }
+
+    void LateUpdate()
+    {
+        //GetRotationInput();
         //Velocity();
-        Rotation();
-        Debug.Log(_mapTransform.localEulerAngles);
+        //Rotation();
+        //PerformPlayerRotation();
+        //Debug.Log(transform.localEulerAngles);
+        Debug.Log(transform.eulerAngles.y);
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            StartCoroutine(PerformPlayerRotation());
+        }
     }
 }
