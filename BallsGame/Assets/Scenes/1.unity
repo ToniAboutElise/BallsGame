@@ -18127,30 +18127,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5806492397303103947, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5806492397303103950, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
       propertyPath: _levelManager
       value: 
       objectReference: {fileID: 1225707250}
-    - target: {fileID: 5806492398167507813, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5806492398167507813, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5806492398167507813, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.6640694
-      objectReference: {fileID: 0}
-    - target: {fileID: 5806492398167507813, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.33490568
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
 --- !u!1001 &3490430040771340627
@@ -18207,50 +18187,6 @@ PrefabInstance:
     - target: {fileID: 3490430041848256835, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
       propertyPath: m_Name
       value: LevelUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 74
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 74
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_FontData.m_FontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118650, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 158.633
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430041957118650, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 103.979
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430042370311381, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430042370311381, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 3490430042370311381, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
