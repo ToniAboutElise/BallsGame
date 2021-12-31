@@ -18208,5 +18208,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUI
       objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118649, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118650, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 158.633
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430041957118650, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 103.979
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430042370311381, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430042370311381, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490430042370311381, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
