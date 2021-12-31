@@ -99,6 +99,8 @@ MonoBehaviour:
   _meshFilter: {fileID: 6257000066033210100}
   _ballMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   _obstacleMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  _obstacleMaterial: {fileID: 2100000, guid: a0cbfe9f6f98dc9458143644c0f91f4d, type: 2}
+  _ballMaterial: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _sceneObjectType: 0
 --- !u!65 &4986026467320993902
 BoxCollider:

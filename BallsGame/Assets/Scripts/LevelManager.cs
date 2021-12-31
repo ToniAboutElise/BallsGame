@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     {
         foreach(Collectable collectable in FindObjectsOfType<Collectable>())
         {
+            if(collectable.GetCollectableState() != Collectable.CollectableState.Null)
             collectablesAmount++;
         }
     }

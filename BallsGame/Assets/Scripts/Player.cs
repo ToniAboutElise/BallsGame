@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -58,10 +59,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Lose();
+    }
+
+    private void Lose()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<Collectable>() == true)
         {
+            if(other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.Collected)
+            {
+                Lose();
+            }
+
             _collectable = other.GetComponent<Collectable>();
             _levelManager.CollectableGrabbed(_collectable);
         }

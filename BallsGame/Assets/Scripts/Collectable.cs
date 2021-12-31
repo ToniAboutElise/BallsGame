@@ -9,10 +9,11 @@ public class Collectable : MonoBehaviour
     [SerializeField] private Material _collected;
 
     [SerializeField]private CollectableState collectableState = CollectableState.NonCollected;
-    private enum CollectableState
+    public enum CollectableState
     {
         NonCollected,
-        Collected
+        Collected,
+        Null
     }
 
     public void SetCollected()
@@ -22,5 +23,10 @@ public class Collectable : MonoBehaviour
             _renderer.material = _collected;
             collectableState = CollectableState.Collected;
         }
+    }
+
+    public CollectableState GetCollectableState()
+    {
+        return collectableState;
     }
 }

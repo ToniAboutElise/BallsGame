@@ -9,6 +9,7 @@ public class FillSurface : EditorWindow
     Object sceneObject;
     string surfaceSpawnSceneObjectsButton = "Fill Surface With Scene GameObjects";
     string surfaceDeleteButton = "Clear Scene Objects";
+    string clearSettersButton = "Clear Preparation Scripts";
 
     [MenuItem("Tools/Fill Surface")]
     private static void OpenVertexObjectGeneratorWindow()
@@ -37,8 +38,13 @@ public class FillSurface : EditorWindow
         {
             ClearSurface();
         }
+        EditorGUILayout.Space(2);
+        if (GUILayout.Button(clearSettersButton))
+        {
+            ClearPreparationScripts();
+        }
 
-        
+
     }
 
     private void FillVerticesWithSceneObjects()
@@ -67,6 +73,14 @@ public class FillSurface : EditorWindow
         {
             DestroyImmediate(sceneObject.transform.parent.gameObject);
             
+        }
+    }
+
+    private void ClearPreparationScripts()
+    {
+        foreach(SceneObject sceneObject in FindObjectsOfType<SceneObject>())
+        {
+            DestroyImmediate(sceneObject);
         }
     }
 }
