@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Text _ballsLeftText;
-    private int collectablesAmount;
+    private int collectablesAmount = 0;
     
 
-    private void Start()
+    private void Awake()
     {
         foreach(Collectable collectable in FindObjectsOfType<Collectable>())
         {

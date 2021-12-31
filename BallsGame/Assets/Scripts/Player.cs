@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<Collectable>() == true)
+        if(other.GetComponent<Collectable>() == true && other.GetComponent<Collectable>().GetCollectableState() != Collectable.CollectableState.Null)
         {
             if(other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.Collected)
             {
