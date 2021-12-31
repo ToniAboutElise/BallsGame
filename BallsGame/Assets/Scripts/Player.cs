@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBody;
+    [SerializeField] private LevelManager _levelManager;
     [SerializeField] private float _velocity;
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform _auxForward;
-    private SceneObject _sceneObject;
+    private Collectable _collectable;
     public bool _isRotating = false;
     private bool _hasRotated = false;
 
@@ -45,13 +46,13 @@ public class Player : MonoBehaviour
 
     private void Rotation()
     {
-        if(_sceneObject != null && Vector3.Distance(transform.localPosition, _sceneObject.transform.position) < 0.07f && _hasRotated == false)
+        if(_collectable != null && Vector3.Distance(transform.localPosition, _collectable.transform.position) < 0.07f && _hasRotated == false)
         {   
             if(rotationType != RotationType.Null && _isRotating == false && _hasRotated == false)
             {
                 _isRotating = true;
                 _hasRotated = false;
-                transform.position = _sceneObject.transform.position;
+                transform.position = _collectable.transform.position;
                 StartCoroutine(PerformPlayerRotation(rotationType));
             }
         }
@@ -59,16 +60,17 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<SceneObject>() == true)
+        if(other.GetComponent<Collectable>() == true)
         {
-            _sceneObject = other.GetComponent<SceneObject>();
+            _collectable = other.GetComponent<Collectable>();
+            _levelManager.CollectableGrabbed(_collectable);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<SceneObject>() == true)
+        if (other.GetComponent<Collectable>() == true)
         {
-            _sceneObject = null;
+            _collectable = null;
             _hasRotated = false;
         }
     }
