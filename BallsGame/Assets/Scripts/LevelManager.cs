@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
         CheckIfLevelIsCompleted();
         if(_doorsList.Count > 0)
         {
-            CheckIfDoorHasToBeOpened();
+            UpdateDoorsRequiredCollectables();
         }
     }
 
@@ -43,14 +43,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void CheckIfDoorHasToBeOpened()
+    private void UpdateDoorsRequiredCollectables()
     {
         foreach(Door door in _doorsList)
         {
-            if(door.requiredCollectables == collectablesGrabbed)
-            {
-                door.OpenDoor();
-            }
+            door.UpdateRequiredCollectables();
         }
     }
 }
