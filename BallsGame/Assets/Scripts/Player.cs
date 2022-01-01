@@ -76,9 +76,17 @@ public class Player : MonoBehaviour
             if(other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.Collected)
             {
                 Lose();
+                return;
             }
 
             _collectable = other.GetComponent<Collectable>();
+
+            if(other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.ProtectedByAdditionalEffect)
+            {
+                other.GetComponent<Collectable>().AdditionalEffect();
+                return;
+            }
+
             _levelManager.CollectableGrabbed(_collectable);
         }
     }

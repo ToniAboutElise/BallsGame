@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6477069108025985611}
   - component: {fileID: 1329231463288600844}
   - component: {fileID: 7590002791854710240}
-  - component: {fileID: 6723253183936534298}
   m_Layer: 0
   m_Name: Bubble
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6723253183936534298
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237739923192724735}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6259173245890096290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,10 +136,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubbledOrbPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6602855006044080858, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
+--- !u!1 &4111160299493558166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8057162269159123764, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
+  m_PrefabInstance: {fileID: 6259173245890096290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2152181799959204844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5405191560764161870, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
   m_PrefabInstance: {fileID: 6259173245890096290}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &2825590528782979492 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8208812500233829638, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
+  m_PrefabInstance: {fileID: 6259173245890096290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4796543103514688997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111160299493558166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f28e0325d4e32a4189501c1488aad08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 2825590528782979492}
+  _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
+  _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
+  collectableState: 2
+  _bubble: {fileID: 1237739923192724735}

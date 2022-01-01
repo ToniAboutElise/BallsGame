@@ -8,11 +8,12 @@ public class Collectable : MonoBehaviour
     [SerializeField] private Material _nonCollected;
     [SerializeField] private Material _collected;
 
-    [SerializeField]private CollectableState collectableState = CollectableState.NonCollected;
+    [SerializeField] protected CollectableState collectableState = CollectableState.NonCollected;
     public enum CollectableState
     {
         NonCollected,
         Collected,
+        ProtectedByAdditionalEffect,
         Null
     }
 
@@ -29,4 +30,6 @@ public class Collectable : MonoBehaviour
     {
         return collectableState;
     }
+
+    public virtual void AdditionalEffect() { }
 }
