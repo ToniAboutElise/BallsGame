@@ -41,7 +41,7 @@ public class FillSurface : EditorWindow
         var py = -15f;
         if(GUI.Button(new Rect(0 + off, 100 + py + off, 50, 50), "Wall"))
         {
-            SpawnGameObjectInSelection("Level Creation/Walls/WallPrefab", 0.15f);
+            SpawnGameObjectInSelection("Level Creation/Environment/WallPrefab", 0.15f);
         }
         if (GUI.Button(new Rect(50 + px + off, 100 + py + off, 50, 50), "Orb"))
         {
