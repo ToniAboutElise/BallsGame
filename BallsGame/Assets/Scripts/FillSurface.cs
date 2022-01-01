@@ -33,7 +33,7 @@ public class FillSurface : EditorWindow
         EditorGUILayout.Space(2);
         GUILayout.Label("Transform selected objects into any of the following options", EditorStyles.boldLabel);
         EditorGUILayout.Space(1);
-        GUI.BeginGroup(new Rect(0, 0, 350, 350));
+        GUI.BeginGroup(new Rect(0, 0, 450, 350));
 
         var off = 20f;
         var px = 20f;
@@ -57,6 +57,10 @@ public class FillSurface : EditorWindow
         if (GUI.Button(new Rect(200 + px * 4f + off, 100 + py + off, 50, 50), "Door"))
         {
             SpawnGameObjectInSelection("Level Creation/Environment/DoorPrefab", 0.15f);
+        }
+        if (GUI.Button(new Rect(250 + px * 5f + off, 100 + py + off, 50, 50), "Fragile"))
+        {
+            SpawnGameObjectInSelection("Level Creation/Collectables/FragileOrbPrefab");
         }
         GUI.EndGroup();
         EditorGUILayout.Space(70);
