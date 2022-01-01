@@ -884,7 +884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80910885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 0.33913752, y: 0.33913752, z: 0.33913752}
   m_Children: []
   m_Father: {fileID: 481214722}
@@ -905,7 +905,7 @@ MonoBehaviour:
   _renderer: {fileID: 80910890}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  collectableState: 0
+  collectableState: 2
 --- !u!65 &80910888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -914,7 +914,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80910885}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
@@ -938,7 +938,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
+  - {fileID: 2100000, guid: a0cbfe9f6f98dc9458143644c0f91f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -967,7 +967,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80910885}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &107077447
 GameObject:
   m_ObjectHideFlags: 0
@@ -6033,7 +6033,7 @@ MonoBehaviour:
   _renderer: {fileID: 699750861}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  collectableState: 0
+  collectableState: 2
 --- !u!65 &699750859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6054,7 +6054,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699750856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6145,7 +6145,7 @@ MonoBehaviour:
   _renderer: {fileID: 700936435}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  collectableState: 0
+  collectableState: 2
 --- !u!65 &700936433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6166,7 +6166,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700936430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16999,7 +16999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092943480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.15, z: 0}
   m_LocalScale: {x: 0.33913752, y: 0.33913752, z: 0.33913752}
   m_Children: []
   m_Father: {fileID: 1964969617}
@@ -17020,7 +17020,7 @@ MonoBehaviour:
   _renderer: {fileID: 2092943485}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  collectableState: 0
+  collectableState: 2
 --- !u!65 &2092943483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17029,7 +17029,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092943480}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
@@ -17053,7 +17053,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
+  - {fileID: 2100000, guid: a0cbfe9f6f98dc9458143644c0f91f4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17082,7 +17082,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092943480}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2097233299
 GameObject:
   m_ObjectHideFlags: 0
