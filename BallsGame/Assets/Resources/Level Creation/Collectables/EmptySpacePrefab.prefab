@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602855006044080858, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
       propertyPath: collectableState
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8057162269159123764, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
       propertyPath: m_Name

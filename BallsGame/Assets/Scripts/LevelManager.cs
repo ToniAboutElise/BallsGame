@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
     {
         foreach(Collectable collectable in FindObjectsOfType<Collectable>())
         {
-            if(collectable.GetCollectableState() == Collectable.CollectableState.NonCollected)
+            if(collectable.GetCollectableState() == Collectable.CollectableState.NonCollected || collectable.GetCollectableState() == Collectable.CollectableState.ProtectedByAdditionalEffect)
             collectablesAmount++;
         }
         Debug.Log(collectablesAmount);
