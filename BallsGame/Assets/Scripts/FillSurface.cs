@@ -26,10 +26,7 @@ public class FillSurface : EditorWindow
         EditorGUILayout.Space();
         GUILayout.Label("Selected Surface", EditorStyles.boldLabel);
         selectedSurface = EditorGUILayout.ObjectField(selectedSurface, typeof(GameObject), true);
-        EditorGUILayout.Space(2);
-        GUILayout.Label("Scene Object prefab", EditorStyles.boldLabel);
-        sceneObject = EditorGUILayout.ObjectField(sceneObject, typeof(GameObject), true);
-        EditorGUILayout.Space(3);
+        EditorGUILayout.Space(5);
         if (GUILayout.Button(surfaceSpawnSceneObjectsButton))
         {
             FillVerticesWithSceneObjects();
@@ -39,22 +36,24 @@ public class FillSurface : EditorWindow
         EditorGUILayout.Space(1);
         GUI.BeginGroup(new Rect(0, 0, 350, 350));
 
-        //GUI.Box(new Rect(250, 250, 80, 80), "Directions");
-
         var off = 20f;
         var px = 20f;
-        var py = 20f;
+        var py = -15f;
         if(GUI.Button(new Rect(0 + off, 100 + py + off, 50, 50), "Wall"))
         {
-            GetSelectedObjects();
+            SpawnGameObjectInSelection("Level Creation/Walls/WallPrefab", 0.15f);
         }
-        if (GUI.Button(new Rect(50 + px + off, 100 + py + off, 50, 50), "Ball"))
+        if (GUI.Button(new Rect(50 + px + off, 100 + py + off, 50, 50), "Orb"))
         {
-            GetSelectedObjects();
+            SpawnGameObjectInSelection("Level Creation/Collectables/OrbPrefab");
         }
-        if (GUI.Button(new Rect(100 + px * 2f + off, 100 + py + off, 50, 50), "Bubble Ball"))
+        if (GUI.Button(new Rect(100 + px * 2f + off, 100 + py + off, 50, 50), "Bubbled Orb"))
         {
-            GetSelectedObjects();
+            SpawnGameObjectInSelection("Level Creation/Collectables/BubbledOrbPrefab");
+        }
+        if (GUI.Button(new Rect(150 + px * 3f + off, 100 + py + off, 50, 50), "Empty Space"))
+        {
+            SpawnGameObjectInSelection("Level Creation/Collectables/EmptySpacePrefab");
         }
         GUI.EndGroup();
         EditorGUILayout.Space(70);
@@ -73,7 +72,7 @@ public class FillSurface : EditorWindow
 
     private void FillVerticesWithSceneObjects()
     {
-        if (selectedSurface != null && FindObjectOfType<SceneObject>() == null)
+        if (selectedSurface != null && GameObject.Find("SelectionInstancingPrefab(Clone)") == false)
         {
             GameObject surfaceGO = (GameObject)selectedSurface;
             Mesh mesh = surfaceGO.GetComponent<MeshFilter>().sharedMesh;
@@ -81,7 +80,7 @@ public class FillSurface : EditorWindow
             for (var i = 0; i < vertices.Length; i++)
             {
                 var direction = surfaceGO.transform.TransformPoint(vertices[i]);
-                GameObject instance = Instantiate((GameObject)sceneObject, surfaceGO.transform);
+                GameObject instance = Instantiate(Resources.Load<GameObject>("Level Creation/_Core/SelectionInstancingPrefab"), surfaceGO.transform);
                 instance.transform.localPosition = vertices[i];
                 if (i == vertices.Length - 1)
                 {
@@ -95,16 +94,30 @@ public class FillSurface : EditorWindow
     {
         foreach (Transform transform in Selection.transforms)
         {
+
             Debug.Log(transform.name);
+        }
+    }
+
+    private void SpawnGameObjectInSelection(string gameObjectPath, float? height = 0.5f)
+    {
+        foreach (Transform selectedTransform in Selection.transforms)
+        {
+            if(selectedTransform.childCount != 0)
+            {
+                DestroyImmediate(selectedTransform.GetChild(0).gameObject);
+            }
+
+            GameObject instance = Instantiate(Resources.Load<GameObject>(gameObjectPath), selectedTransform.transform);
+            instance.transform.localPosition = new Vector3(0, (float)height,0);
         }
     }
 
     private void ClearSurface()
     {
-        foreach (SceneObject sceneObject in FindObjectsOfType<SceneObject>())
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("SelectionInstancing"))
         {
-            DestroyImmediate(sceneObject.transform.parent.gameObject);
-            
+            DestroyImmediate(gameObject);
         }
     }
 
