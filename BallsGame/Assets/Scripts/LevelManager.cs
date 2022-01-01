@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Text _ballsLeftText;
+    [SerializeField] private List<Door> _doorsList = new List<Door>();
     private int collectablesAmount = 0;
+    private int collectablesGrabbed = 0;
     
 
     private void Awake()
@@ -24,8 +26,13 @@ public class LevelManager : MonoBehaviour
     {
         collectable.SetCollected();
         collectablesAmount--;
+        collectablesGrabbed++;
         _ballsLeftText.text = collectablesAmount.ToString();
         CheckIfLevelIsCompleted();
+        if(_doorsList.Count > 0)
+        {
+            CheckIfDoorHasToBeOpened();
+        }
     }
 
     private void CheckIfLevelIsCompleted()
@@ -33,6 +40,17 @@ public class LevelManager : MonoBehaviour
         if(collectablesAmount == 0)
         {
             //end level
+        }
+    }
+
+    private void CheckIfDoorHasToBeOpened()
+    {
+        foreach(Door door in _doorsList)
+        {
+            if(door.requiredCollectables == collectablesGrabbed)
+            {
+                door.OpenDoor();
+            }
         }
     }
 }

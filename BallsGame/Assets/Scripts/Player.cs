@@ -87,7 +87,10 @@ public class Player : MonoBehaviour
                 return;
             }
 
-            _levelManager.CollectableGrabbed(_collectable);
+            if (other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.NonCollected) 
+            { 
+                _levelManager.CollectableGrabbed(_collectable);
+            }
         }
     }
     private void OnTriggerExit(Collider other)

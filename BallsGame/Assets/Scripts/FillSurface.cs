@@ -9,7 +9,6 @@ public class FillSurface : EditorWindow
     Object sceneObject;
     string surfaceSpawnSceneObjectsButton = "Fill Surface With Scene GameObjects";
     string surfaceDeleteButton = "Clear Scene Objects";
-    string getSelectedObjects = "Get Selected Objects";
     string clearSettersButton = "Clear Preparation Scripts";
 
     [MenuItem("Tools/Fill Surface")]
@@ -47,13 +46,17 @@ public class FillSurface : EditorWindow
         {
             SpawnGameObjectInSelection("Level Creation/Collectables/OrbPrefab");
         }
-        if (GUI.Button(new Rect(100 + px * 2f + off, 100 + py + off, 50, 50), "Bubbled Orb"))
+        if (GUI.Button(new Rect(100 + px * 2f + off, 100 + py + off, 50, 50), "Bubble"))
         {
             SpawnGameObjectInSelection("Level Creation/Collectables/BubbledOrbPrefab");
         }
-        if (GUI.Button(new Rect(150 + px * 3f + off, 100 + py + off, 50, 50), "Empty Space"))
+        if (GUI.Button(new Rect(150 + px * 3f + off, 100 + py + off, 50, 50), "Empty"))
         {
             SpawnGameObjectInSelection("Level Creation/Collectables/EmptySpacePrefab");
+        }
+        if (GUI.Button(new Rect(200 + px * 4f + off, 100 + py + off, 50, 50), "Door"))
+        {
+            SpawnGameObjectInSelection("Level Creation/Environment/DoorPrefab", 0.15f);
         }
         GUI.EndGroup();
         EditorGUILayout.Space(70);
@@ -87,15 +90,6 @@ public class FillSurface : EditorWindow
                     Debug.Log(i + " objects instantiated");
                 }
             }
-        }
-    }
-
-    private void GetSelectedObjects()
-    {
-        foreach (Transform transform in Selection.transforms)
-        {
-
-            Debug.Log(transform.name);
         }
     }
 
