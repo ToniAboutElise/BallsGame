@@ -47,10 +47,11 @@ public class Player : MonoBehaviour
 
     private void Rotation()
     {
-        if(_collectable != null && Vector3.Distance(transform.localPosition, _collectable.transform.position) < 0.07f && _hasRotated == false)
+        if(_collectable != null && Vector3.Distance(transform.localPosition, _collectable.transform.position) < 0.2f && _hasRotated == false)
         {   
             if(rotationType != RotationType.Null && _isRotating == false)
             {
+                transform.localPosition = _collectable.transform.position;
                 _isRotating = true;
                 StartCoroutine(PerformPlayerRotation(rotationType));
             }
