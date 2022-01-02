@@ -79,9 +79,14 @@ public class FillSurface : EditorWindow
 
     private void FillVerticesWithSceneObjects()
     {
-        if (selectedSurface != null && GameObject.Find("SelectionInstancingPrefab(Clone)") == false)
+        if (selectedSurface != null)
         {
             GameObject surfaceGO = (GameObject)selectedSurface;
+            if(surfaceGO.transform.childCount != 0)
+            {
+                Debug.Log("This surface is not empty, clean it before instancing new objects onto it!");
+                return;
+            }
             Mesh mesh = surfaceGO.GetComponent<MeshFilter>().sharedMesh;
             Vector3[] vertices = mesh.vertices;
             for (var i = 0; i < vertices.Length; i++)
@@ -113,9 +118,11 @@ public class FillSurface : EditorWindow
 
     private void ClearSurface()
     {
-        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag("SelectionInstancing"))
+        GameObject surfaceGO = (GameObject)selectedSurface;
+
+        for(int i = 0; i < surfaceGO.transform.childCount; i++)
         {
-            DestroyImmediate(gameObject);
+            DestroyImmediate(surfaceGO.transform.GetChild(i).gameObject);
         }
     }
 

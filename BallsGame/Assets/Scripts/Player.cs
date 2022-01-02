@@ -49,11 +49,9 @@ public class Player : MonoBehaviour
     {
         if(_collectable != null && Vector3.Distance(transform.localPosition, _collectable.transform.position) < 0.07f && _hasRotated == false)
         {   
-            if(rotationType != RotationType.Null && _isRotating == false && _hasRotated == false)
+            if(rotationType != RotationType.Null && _isRotating == false)
             {
                 _isRotating = true;
-                _hasRotated = false;
-                transform.position = _collectable.transform.position;
                 StartCoroutine(PerformPlayerRotation(rotationType));
             }
         }
@@ -73,13 +71,13 @@ public class Player : MonoBehaviour
     {
         if(other.GetComponent<Collectable>() == true)
         {
+            _collectable = other.GetComponent<Collectable>();
+
             if(other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.Collected)
             {
                 Lose();
                 return;
             }
-
-            _collectable = other.GetComponent<Collectable>();
 
             if(other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.ProtectedByAdditionalEffect)
             {
