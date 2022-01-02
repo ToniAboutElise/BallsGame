@@ -114,7 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 5806492397303103947}
-  _collider: {fileID: 5806492397303103951}
   _levelManager: {fileID: 0}
   _velocity: 4
   _animator: {fileID: 5806492397303103944}
