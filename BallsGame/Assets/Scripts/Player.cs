@@ -51,7 +51,6 @@ public class Player : MonoBehaviour
         {   
             if(rotationType != RotationType.Null && _isRotating == false)
             {
-                transform.localPosition = _collectable.transform.position;
                 _isRotating = true;
                 StartCoroutine(PerformPlayerRotation(rotationType));
             }
@@ -180,10 +179,19 @@ public class Player : MonoBehaviour
         _hasRotated = true;
     }
 
+    private void FixPositionWhileRotating()
+    {
+        if (_isRotating == true)
+        {
+            transform.localPosition = _collectable.transform.position;
+        }
+    }
+
     void LateUpdate()
     {
         GetRotationInput();
         Velocity();
         Rotation();
+        FixPositionWhileRotating();
     }
 }
