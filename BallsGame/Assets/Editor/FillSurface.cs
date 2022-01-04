@@ -6,10 +6,11 @@ using UnityEditor;
 public class FillSurface : EditorWindow
 {
     Object selectedSurface;
-    Object sceneObject;
+    Object assetToUpdate;
     string surfaceSpawnSceneObjectsButton = "Fill Surface With Scene GameObjects";
     string surfaceDeleteButton = "Clear Scene Objects";
     string clearSettersButton = "Clear Preparation Scripts";
+    string updateAsset = "Update Asset";
 
     [MenuItem("Tools/Fill Surface")]
     private static void OpenVertexObjectGeneratorWindow()
@@ -69,6 +70,12 @@ public class FillSurface : EditorWindow
             ClearPreparationScripts();
         }
         EditorGUILayout.Space(2);
+        selectedSurface = EditorGUILayout.ObjectField(assetToUpdate, typeof(GameObject), true);
+        if (GUILayout.Button(updateAsset))
+        {
+            UpdateAsset();
+        }
+        EditorGUILayout.Space(2);
         if (GUILayout.Button(surfaceDeleteButton))
         {
             ClearSurface();
@@ -123,6 +130,22 @@ public class FillSurface : EditorWindow
         for(int i = 0; i < surfaceGO.transform.childCount; i++)
         {
             DestroyImmediate(surfaceGO.transform.GetChild(i).gameObject);
+        }
+    }
+
+    private void UpdateAsset()
+    {
+        GameObject newAsset = (GameObject)assetToUpdate;
+
+        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag(newAsset.tag))
+        {
+            Transform gameObjectParent = gameObject.transform.parent;
+            Vector3 gameObjectLocalPosition = gameObject.transform.localPosition;
+
+            DestroyImmediate(gameObject);
+
+            GameObject instance = Instantiate(newAsset, gameObjectParent);
+            instance.transform.localPosition = gameObjectLocalPosition;
         }
     }
 
