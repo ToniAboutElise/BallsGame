@@ -53,6 +53,7 @@ sysinfo.txt
 
 # Blender .blend1 files
 *.blend1
+*.blend1.meta
 
 # Builds
 *.apk
