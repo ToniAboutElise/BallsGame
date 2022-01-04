@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FragileOrbPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8057162269159123764, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
+      propertyPath: m_TagString
+      value: FragileOrb
+      objectReference: {fileID: 0}
     - target: {fileID: 8208812500233829638, guid: 9fff58086066c3e4ea0f91c91b348122, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

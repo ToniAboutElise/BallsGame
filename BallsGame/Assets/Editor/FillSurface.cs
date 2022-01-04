@@ -70,7 +70,8 @@ public class FillSurface : EditorWindow
             ClearPreparationScripts();
         }
         EditorGUILayout.Space(2);
-        selectedSurface = EditorGUILayout.ObjectField(assetToUpdate, typeof(GameObject), true);
+        GUILayout.Label("Drag the asset you want to update here", EditorStyles.boldLabel);
+        assetToUpdate = EditorGUILayout.ObjectField(assetToUpdate, typeof(GameObject), true);
         if (GUILayout.Button(updateAsset))
         {
             UpdateAsset();
@@ -135,18 +136,27 @@ public class FillSurface : EditorWindow
 
     private void UpdateAsset()
     {
-        GameObject newAsset = (GameObject)assetToUpdate;
-
-        foreach (GameObject gameObject in GameObject.FindGameObjectsWithTag(newAsset.tag))
+        GameObject newAsset = Instantiate((GameObject)assetToUpdate);
+        int t = 0;
+        foreach (GameObject _gameObject in GameObject.FindGameObjectsWithTag(newAsset.tag))
         {
-            Transform gameObjectParent = gameObject.transform.parent;
-            Vector3 gameObjectLocalPosition = gameObject.transform.localPosition;
+            if(_gameObject != newAsset) 
+            { 
+                Debug.Log(t);
+                GameObject gameObjectParent = _gameObject.transform.parent.gameObject;
+                Vector3 gameObjectLocalPosition = _gameObject.transform.localPosition;
 
-            DestroyImmediate(gameObject);
+                GameObject instance = Instantiate(newAsset, gameObjectParent.transform);
+                instance.transform.localPosition = gameObjectLocalPosition;
 
-            GameObject instance = Instantiate(newAsset, gameObjectParent);
-            instance.transform.localPosition = gameObjectLocalPosition;
+                DestroyImmediate(_gameObject);
+                t++;
+
+                Debug.Log(t);
+            }
         }
+
+        DestroyImmediate(newAsset);
     }
 
     private void ClearPreparationScripts()
