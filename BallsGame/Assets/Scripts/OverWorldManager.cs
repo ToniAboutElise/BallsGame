@@ -1,21 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class OverWorldManager : MonoBehaviour
 {
     [SerializeField] private List<OverWorldWorld> overWorldWorlds = new List<OverWorldWorld>();
-    public List<OverWorldLevelPill> _overWorldlevelPills = new List<OverWorldLevelPill>();
+    public List<OverWorldLevelPill> _overWorldLevelPills = new List<OverWorldLevelPill>();
     [SerializeField] private OverWorldLevelPill currentSelectedPill;
     private int currentSelectedPillInt;
 
     private void Start()
     {
+        int currentOverWorld = 0;
+        int currentLevel = 0;
         foreach(OverWorldWorld overWorldWorld in overWorldWorlds)
         {
+            currentOverWorld++;
             foreach (OverWorldLevelPill overWorldLevelPill in overWorldWorld.overWorldLevelPills)
             {
-                _overWorldlevelPills.Add(overWorldLevelPill);
+                currentLevel++;
+                overWorldLevelPill.levelNumber = currentOverWorld + "-" + currentLevel;
+                overWorldLevelPill.text.text = overWorldLevelPill.levelNumber;
+                overWorldLevelPill.SetLockState(overWorldLevelPill.unlocked);
+                _overWorldLevelPills.Add(overWorldLevelPill);
+                //Set unlocked pills by reading saved file here
             }
         }
 
@@ -24,27 +33,27 @@ public class OverWorldManager : MonoBehaviour
 
     private void SetCurrentSelectedLevel()
     {
-        for(int i = 0; i < _overWorldlevelPills.Count; i++)
+        for(int i = 0; i < _overWorldLevelPills.Count; i++)
         {
-            if(i == _overWorldlevelPills.Count - 1 && _overWorldlevelPills[i].unlocked == true)
+            if (i == _overWorldLevelPills.Count - 1 && _overWorldLevelPills[i].unlocked == true)
             {
-                _overWorldlevelPills[i].SetSelected(true);
-                currentSelectedPill = _overWorldlevelPills[i];
+                _overWorldLevelPills[i].SetSelected(true);
+                currentSelectedPill = _overWorldLevelPills[i];
                 currentSelectedPillInt = i;
             }
 
-            if(_overWorldlevelPills[i].unlocked == false)
+            if(_overWorldLevelPills[i].unlocked == false)
             {
                 if(i != 0)
                 {
-                    _overWorldlevelPills[i - 1].SetSelected(true);
-                    currentSelectedPill = _overWorldlevelPills[i - 1];
+                    _overWorldLevelPills[i - 1].SetSelected(true);
+                    currentSelectedPill = _overWorldLevelPills[i - 1];
                     currentSelectedPillInt = i - 1;
                 }
                 else
                 {
-                    _overWorldlevelPills[i].SetSelected(true);
-                    currentSelectedPill = _overWorldlevelPills[i];
+                    _overWorldLevelPills[i].SetSelected(true);
+                    currentSelectedPill = _overWorldLevelPills[i];
                     currentSelectedPillInt = i;
                 }
                 return;
@@ -56,21 +65,21 @@ public class OverWorldManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(currentSelectedPill != _overWorldlevelPills[_overWorldlevelPills.Count - 1] && _overWorldlevelPills[currentSelectedPillInt + 1].unlocked == true)
+            if(currentSelectedPill != _overWorldLevelPills[_overWorldLevelPills.Count - 1] && _overWorldLevelPills[currentSelectedPillInt + 1].unlocked == true)
             {
                 currentSelectedPill.SetSelected(false);
                 currentSelectedPillInt++;
-                currentSelectedPill = _overWorldlevelPills[currentSelectedPillInt];
+                currentSelectedPill = _overWorldLevelPills[currentSelectedPillInt];
                 currentSelectedPill.SetSelected(true);
             }
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (currentSelectedPill != _overWorldlevelPills[0] && _overWorldlevelPills[currentSelectedPillInt - 1].unlocked == true)
+            if (currentSelectedPill != _overWorldLevelPills[0] && _overWorldLevelPills[currentSelectedPillInt - 1].unlocked == true)
             {
                 currentSelectedPill.SetSelected(false);
                 currentSelectedPillInt--;
-                currentSelectedPill = _overWorldlevelPills[currentSelectedPillInt];
+                currentSelectedPill = _overWorldLevelPills[currentSelectedPillInt];
                 currentSelectedPill.SetSelected(true);
             }
         }
