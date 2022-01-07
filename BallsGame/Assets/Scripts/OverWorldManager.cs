@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
 public class OverWorldManager : MonoBehaviour
 {
@@ -85,8 +86,16 @@ public class OverWorldManager : MonoBehaviour
         }
     }
 
+    private void LoadLevel()
+    {
+        SceneManager.LoadSceneAsync(currentSelectedPill.levelNumber, LoadSceneMode.Single);
+    }
     private void Update()
     {
         UpdateSelectedLevel();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            LoadLevel();
+        }
     }
 }
