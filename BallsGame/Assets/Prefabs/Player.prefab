@@ -219,9 +219,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidBody: {fileID: 5806492397303103947}
+  _collider: {fileID: 5806492397303103951}
   _levelManager: {fileID: 0}
   _velocity: 4
-  _animator: {fileID: 5806492397303103944}
+  _cameraAnimator: {fileID: 5806492397303103944}
+  _characterAnimator: {fileID: 759144712}
   _auxForward: {fileID: 5806492398122632874}
   _isRotating: 0
 --- !u!54 &5806492397303103947

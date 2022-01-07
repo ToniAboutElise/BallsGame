@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidBody;
+    [SerializeField] private Collider _collider;
     [SerializeField] private LevelManager _levelManager;
     [SerializeField] private float _velocity;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator _cameraAnimator;
+    [SerializeField] private Animator _characterAnimator;
     [SerializeField] private Transform _auxForward;
     private Collectable _collectable;
     public bool _isRotating = false;
@@ -90,6 +92,10 @@ public class Player : MonoBehaviour
                 _levelManager.CollectableGrabbed(_collectable);
             }
         }
+        else if (other.tag == "GoalStar")
+        {
+            LevelFinished();
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -126,22 +132,22 @@ public class Player : MonoBehaviour
                 switch (currentRotationDegrees)
                 {
                     case CurrentRotationDegrees._0:
-                        _animator.SetTrigger("270");
+                        _cameraAnimator.SetTrigger("270");
                         triggerString = "270";
                         currentRotationDegrees = CurrentRotationDegrees._270;
                         break;
                     case CurrentRotationDegrees._90:
-                        _animator.SetTrigger("0");
+                        _cameraAnimator.SetTrigger("0");
                         triggerString = "0";
                         currentRotationDegrees = CurrentRotationDegrees._0;
                         break;
                     case CurrentRotationDegrees._180:
-                        _animator.SetTrigger("90");
+                        _cameraAnimator.SetTrigger("90");
                         triggerString = "90";
                         currentRotationDegrees = CurrentRotationDegrees._90;
                         break;
                     case CurrentRotationDegrees._270:
-                        _animator.SetTrigger("180");
+                        _cameraAnimator.SetTrigger("180");
                         triggerString = "180";
                         currentRotationDegrees = CurrentRotationDegrees._180;
                         break;
@@ -151,22 +157,22 @@ public class Player : MonoBehaviour
                 switch (currentRotationDegrees)
                 {
                     case CurrentRotationDegrees._0:
-                        _animator.SetTrigger("90");
+                        _cameraAnimator.SetTrigger("90");
                         triggerString = "90";
                         currentRotationDegrees = CurrentRotationDegrees._90;
                         break;
                     case CurrentRotationDegrees._90:
-                        _animator.SetTrigger("180");
+                        _cameraAnimator.SetTrigger("180");
                         triggerString = "180";
                         currentRotationDegrees = CurrentRotationDegrees._180;
                         break;
                     case CurrentRotationDegrees._180:
-                        _animator.SetTrigger("270");
+                        _cameraAnimator.SetTrigger("270");
                         triggerString = "270";
                         currentRotationDegrees = CurrentRotationDegrees._270;
                         break;
                     case CurrentRotationDegrees._270:
-                        _animator.SetTrigger("0");
+                        _cameraAnimator.SetTrigger("0");
                         triggerString = "0";
                         currentRotationDegrees = CurrentRotationDegrees._0;
                         break;
@@ -174,7 +180,7 @@ public class Player : MonoBehaviour
                 break;
         }
         yield return new WaitForSeconds(0.55f);
-        _animator.ResetTrigger(triggerString);
+        _cameraAnimator.ResetTrigger(triggerString);
         _isRotating = false;
         _hasRotated = true;
     }
@@ -185,6 +191,12 @@ public class Player : MonoBehaviour
         {
             transform.localPosition = _collectable.transform.position;
         }
+    }
+    private void LevelFinished()
+    {
+        _velocity = 0;
+        _collider.enabled = false;
+        _characterAnimator.SetTrigger("dance");
     }
 
     void LateUpdate()
