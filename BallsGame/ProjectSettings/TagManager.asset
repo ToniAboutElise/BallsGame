@@ -10,6 +10,7 @@ TagManager:
   - FragileOrb
   - BubbledOrb
   - GoalStar
+  - Portal
   layers:
   - Default
   - TransparentFX

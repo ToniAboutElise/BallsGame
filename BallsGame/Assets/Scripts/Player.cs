@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Camera _camera;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Collider _collider;
     [SerializeField] private LevelManager _levelManager;
@@ -13,7 +14,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator _characterAnimator;
     [SerializeField] private Transform _auxForward;
     private Collectable _collectable;
-    public bool _isRotating = false;
+    public bool canRun = true;
+    public bool canRotate = true;
+    public bool isRotating = false;
     private bool _hasRotated = false;
 
     private CurrentRotationDegrees currentRotationDegrees = CurrentRotationDegrees._0;
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
 
     private void Velocity()
     {
-        if(_isRotating == false) 
+        if(isRotating == false && canRun == true) 
         { 
             _rigidBody.velocity = _auxForward.forward * _velocity;
         }
@@ -49,11 +52,11 @@ public class Player : MonoBehaviour
 
     private void Rotation()
     {
-        if(_collectable != null && Vector3.Distance(transform.localPosition, _collectable.transform.position) < 0.5f && _hasRotated == false)
+        if(_collectable != null && Vector3.Distance(transform.localPosition, _collectable.transform.position) < 0.5f && _hasRotated == false && canRotate == true)
         {   
-            if(rotationType != RotationType.Null && _isRotating == false)
+            if(rotationType != RotationType.Null && isRotating == false)
             {
-                _isRotating = true;
+                isRotating = true;
                 StartCoroutine(PerformPlayerRotation(rotationType));
             }
         }
@@ -96,6 +99,10 @@ public class Player : MonoBehaviour
         {
             LevelFinished();
         }
+        else if (other.tag == "Portal")
+        {
+            other.GetComponent<Portal>().Teleport(_camera.transform, this);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -124,7 +131,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator PerformPlayerRotation(RotationType rotationType)
     {
-        _isRotating = true;
+        isRotating = true;
         string triggerString = "";
         switch (rotationType)
         {
@@ -181,13 +188,13 @@ public class Player : MonoBehaviour
         }
         yield return new WaitForSeconds(0.55f);
         _cameraAnimator.ResetTrigger(triggerString);
-        _isRotating = false;
+        isRotating = false;
         _hasRotated = true;
     }
 
     private void FixPositionWhileRotating()
     {
-        if (_isRotating == true)
+        if (isRotating == true)
         {
             transform.localPosition = _collectable.transform.position;
         }
