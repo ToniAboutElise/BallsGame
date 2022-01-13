@@ -19,7 +19,7 @@ public class Portal : MonoBehaviour
 
     private IEnumerator TeleportCR(Transform camera, Player player)
     {
-        teleportParticleSystem.Play();
+        //teleportParticleSystem.Play();
 
         if (_player == null)
         {
@@ -33,7 +33,7 @@ public class Portal : MonoBehaviour
         camera.SetParent(null);
         _otherPortal.GetComponent<BoxCollider>().enabled = false;
         player.transform.position = _otherPortal.GetComponent<Portal>().respawnTransform.position;
-        _otherPortal.GetComponent<Portal>().teleportParticleSystem.Play();
+        //_otherPortal.GetComponent<Portal>().teleportParticleSystem.Play();
         camera.SetParent(player.transform);
         MoveCamera(player, _cameraTransform, _originalCameraLocalPosition);
         yield return new WaitForSeconds(0.5f);
