@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    public ParticleSystem teleportParticleSystem;
     [SerializeField] private Transform _otherPortal;
     public Transform respawnTransform;
     private bool _canMoveCamera = false;
@@ -18,7 +19,9 @@ public class Portal : MonoBehaviour
 
     private IEnumerator TeleportCR(Transform camera, Player player)
     {
-        if(_player == null)
+        teleportParticleSystem.Play();
+
+        if (_player == null)
         {
             _player = player;
         }
@@ -30,6 +33,7 @@ public class Portal : MonoBehaviour
         camera.SetParent(null);
         _otherPortal.GetComponent<BoxCollider>().enabled = false;
         player.transform.position = _otherPortal.GetComponent<Portal>().respawnTransform.position;
+        _otherPortal.GetComponent<Portal>().teleportParticleSystem.Play();
         camera.SetParent(player.transform);
         MoveCamera(player, _cameraTransform, _originalCameraLocalPosition);
         yield return new WaitForSeconds(0.5f);
