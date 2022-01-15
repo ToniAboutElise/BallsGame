@@ -77,9 +77,12 @@ public class OverWorldManager : MonoBehaviour
             if(unlocked == "False")
             {
                 _overWorldLevelPills[currentLevelSet].unlocked = false;
+                _overWorldLevelPills[currentLevelSet].SetLockState(false);
             }
             else
             {
+                _overWorldLevelPills[currentLevelSet].unlocked = true;
+                _overWorldLevelPills[currentLevelSet].SetLockState(true);
                 selectedPill = _overWorldLevelPills[currentLevelSet];
                 currentSelectedPill = _overWorldLevelPills[currentLevelSet];
                 currentSelectedPillInt = currentLevelSet;
