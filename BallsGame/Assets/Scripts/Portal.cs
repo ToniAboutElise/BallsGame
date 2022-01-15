@@ -26,6 +26,7 @@ public class Portal : MonoBehaviour
             _player = player;
         }
 
+        _player.canRotate = false;
         _cameraTransform = camera;
         _originalCameraLocalPosition = camera.localPosition;
         _canMoveCamera = true;
@@ -54,7 +55,8 @@ public class Portal : MonoBehaviour
         if(cameraTransform.localPosition == targetLocalPosition)
         {
             player.canRun = true;
-            if(_reactivatingCooldown == false)
+            player.canRotate = true;
+            if (_reactivatingCooldown == false)
             StartCoroutine(PortalReactivationCooldown());
         }
     }
