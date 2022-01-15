@@ -146,11 +146,11 @@ public class OverWorldManager : MonoBehaviour
     private void Update()
     {
         UpdateSelectedLevel();
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
+        
+        if ( _playerInputActions.Player.FaceButtonDown.IsPressed())
         {
             LoadLevel();
         }
-        */
+        
     }
 }
