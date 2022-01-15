@@ -89,8 +89,19 @@ public class OverWorldManager : MonoBehaviour
             }
             currentLevelSet++;
         }
+
+        if (_overWorldLevelPills[0].unlocked == false)
+        {
+            selectedPill = _overWorldLevelPills[0];
+            currentSelectedPill = _overWorldLevelPills[0];
+            currentSelectedPillInt = 0;
+        }
+
         selectedPill.unlocked = true;
         selectedPill.SetSelected(true);
+        selectedPill.SetLockState(true);
+
+
     }
 
     private void UpdateSelectedLevel()
