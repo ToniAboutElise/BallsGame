@@ -63297,6 +63297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72fd90b72a9a3d4d816ab29cc6e40b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: 1-2
   _ballsLeftText: {fileID: 1236507626}
   _doorsList:
   - {fileID: 1159412320}

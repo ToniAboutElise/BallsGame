@@ -204,6 +204,14 @@ public class Player : MonoBehaviour
         _velocity = 0;
         _collider.enabled = false;
         _characterAnimator.SetTrigger("dance");
+        StartCoroutine(LevelFinishedCR());
+    }
+
+    private IEnumerator LevelFinishedCR()
+    {
+        LevelEndSaveFile.SaveFileEndLevel(_levelManager.nextLevel);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadSceneAsync("LevelSelection", LoadSceneMode.Single);
     }
 
     void LateUpdate()

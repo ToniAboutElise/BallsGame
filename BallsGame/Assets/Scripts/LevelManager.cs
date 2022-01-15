@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public string nextLevel = "0-0";
     [SerializeField] private Text _ballsLeftText;
     [SerializeField] private List<Door> _doorsList = new List<Door>();
     private int collectablesAmount = 0;
