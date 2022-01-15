@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private Camera _camera;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Collider _collider;

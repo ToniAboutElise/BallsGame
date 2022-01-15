@@ -8,14 +8,18 @@ using UnityEngine.SceneManagement;
 
 public class OverWorldManager : MonoBehaviour
 {
+    [SerializeField] PlayerInputActions _playerInputActions;
     [SerializeField] private List<OverWorldWorld> overWorldWorlds = new List<OverWorldWorld>();
     public List<OverWorldLevelPill> _overWorldLevelPills = new List<OverWorldLevelPill>();
     [SerializeField] private OverWorldLevelPill currentSelectedPill;
     private string savedFile;
     private int currentSelectedPillInt;
+    private bool canChangeSelectedLevel = true;
 
-    private void Start()
+    private void Awake()
     {
+        _playerInputActions = new PlayerInputActions();
+        _playerInputActions.Player.Enable();
         ResetLevelsUnlocked();
         CheckUnlockedLevels();
     }
@@ -106,9 +110,11 @@ public class OverWorldManager : MonoBehaviour
 
     private void UpdateSelectedLevel()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+
+        if (_playerInputActions.Player.Move.ReadValue<Vector2>().x > 0.3f && canChangeSelectedLevel == true)
         {
-            if(currentSelectedPill != _overWorldLevelPills[_overWorldLevelPills.Count - 1] && _overWorldLevelPills[currentSelectedPillInt + 1].unlocked == true)
+            canChangeSelectedLevel = false;
+            if (currentSelectedPill != _overWorldLevelPills[_overWorldLevelPills.Count - 1] && _overWorldLevelPills[currentSelectedPillInt + 1].unlocked == true)
             {
                 currentSelectedPill.SetSelected(false);
                 currentSelectedPillInt++;
@@ -116,8 +122,9 @@ public class OverWorldManager : MonoBehaviour
                 currentSelectedPill.SetSelected(true);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (_playerInputActions.Player.Move.ReadValue<Vector2>().x < -0.3f && canChangeSelectedLevel == true)
         {
+            canChangeSelectedLevel = false;
             if (currentSelectedPill != _overWorldLevelPills[0] && _overWorldLevelPills[currentSelectedPillInt - 1].unlocked == true)
             {
                 currentSelectedPill.SetSelected(false);
@@ -125,6 +132,10 @@ public class OverWorldManager : MonoBehaviour
                 currentSelectedPill = _overWorldLevelPills[currentSelectedPillInt];
                 currentSelectedPill.SetSelected(true);
             }
+        }
+        else if (_playerInputActions.Player.Move.ReadValue<Vector2>().x > -0.15f && _playerInputActions.Player.Move.ReadValue<Vector2>().x < 0.15f)
+        {
+            canChangeSelectedLevel = true;
         }
     }
 
@@ -135,9 +146,11 @@ public class OverWorldManager : MonoBehaviour
     private void Update()
     {
         UpdateSelectedLevel();
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             LoadLevel();
         }
+        */
     }
 }
