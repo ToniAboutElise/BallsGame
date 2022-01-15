@@ -49,6 +49,6 @@ public class LevelManager : MonoBehaviour
         foreach(Door door in _doorsList)
         {
             door.UpdateRequiredCollectables();
-        }
+        }   
     }
 }

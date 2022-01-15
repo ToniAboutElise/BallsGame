@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private Camera _camera;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Collider _collider;
@@ -18,6 +20,8 @@ public class Player : MonoBehaviour
     public bool canRotate = true;
     public bool isRotating = false;
     private bool _hasRotated = false;
+    private PlayerInputActions playerInputActions;
+    private float _rotationFloat = 0;
 
     private CurrentRotationDegrees currentRotationDegrees = CurrentRotationDegrees._0;
 
@@ -36,6 +40,12 @@ public class Player : MonoBehaviour
         Null,
         Left,
         Right
+    }
+
+    private void Awake()
+    {
+        playerInputActions = new PlayerInputActions();
+        playerInputActions.Player.Enable();
     }
 
     private void Velocity()
@@ -115,11 +125,11 @@ public class Player : MonoBehaviour
 
     private void GetRotationInput()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (_rotationFloat < -0.2f)
         {
             rotationType = RotationType.Left;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (_rotationFloat > 0.2f)
         {
             rotationType = RotationType.Right;
         }
@@ -192,6 +202,10 @@ public class Player : MonoBehaviour
         _hasRotated = true;
     }
 
+    public void SetHorizontalRotationValue()
+    {
+        _rotationFloat = playerInputActions.Player.Move.ReadValue<Vector2>().x;
+    }
     private void FixPositionWhileRotating()
     {
         if (isRotating == true)
@@ -216,9 +230,16 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
+        SetHorizontalRotationValue();
         GetRotationInput();
         Velocity();
         Rotation();
         FixPositionWhileRotating();
+        /*
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("LevelSelection", LoadSceneMode.Single);
+        }
+        */
     }
 }
