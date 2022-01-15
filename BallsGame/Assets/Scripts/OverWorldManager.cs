@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.SceneManagement;
@@ -9,13 +11,20 @@ public class OverWorldManager : MonoBehaviour
     [SerializeField] private List<OverWorldWorld> overWorldWorlds = new List<OverWorldWorld>();
     public List<OverWorldLevelPill> _overWorldLevelPills = new List<OverWorldLevelPill>();
     [SerializeField] private OverWorldLevelPill currentSelectedPill;
+    private string savedFile;
     private int currentSelectedPillInt;
 
     private void Start()
     {
+        ResetLevelsUnlocked();
+        CheckUnlockedLevels();
+    }
+
+    private void ResetLevelsUnlocked()
+    {
         int currentOverWorld = 0;
         int currentLevel = 0;
-        foreach(OverWorldWorld overWorldWorld in overWorldWorlds)
+        foreach (OverWorldWorld overWorldWorld in overWorldWorlds)
         {
             currentOverWorld++;
             foreach (OverWorldLevelPill overWorldLevelPill in overWorldWorld.overWorldLevelPills)
@@ -25,41 +34,60 @@ public class OverWorldManager : MonoBehaviour
                 overWorldLevelPill.text.text = overWorldLevelPill.levelNumber;
                 overWorldLevelPill.SetLockState(overWorldLevelPill.unlocked);
                 _overWorldLevelPills.Add(overWorldLevelPill);
-                //Set unlocked pills by reading saved file here
             }
         }
-
-        SetCurrentSelectedLevel();
     }
 
-    private void SetCurrentSelectedLevel()
+    private void CheckUnlockedLevels()
     {
-        for(int i = 0; i < _overWorldLevelPills.Count; i++)
+        savedFile = Application.persistentDataPath + "\\savedFile.txt";
+        int currentOverWorld = 0;
+        int currentLevel = 0;
+        if (!File.Exists(savedFile))
         {
-            if (i == _overWorldLevelPills.Count - 1 && _overWorldLevelPills[i].unlocked == true)
+            using (FileStream fs = File.Create(savedFile))
             {
-                _overWorldLevelPills[i].SetSelected(true);
-                currentSelectedPill = _overWorldLevelPills[i];
-                currentSelectedPillInt = i;
-            }
-
-            if(_overWorldLevelPills[i].unlocked == false)
-            {
-                if(i != 0)
+                foreach (OverWorldWorld overWorldWorld in overWorldWorlds)
                 {
-                    _overWorldLevelPills[i - 1].SetSelected(true);
-                    currentSelectedPill = _overWorldLevelPills[i - 1];
-                    currentSelectedPillInt = i - 1;
+                    currentOverWorld++;
+                    foreach (OverWorldLevelPill overWorldLevelPill in overWorldWorld.overWorldLevelPills)
+                    {
+                        byte[] info = new UTF8Encoding(true).GetBytes(overWorldLevelPill.levelNumber + " " + overWorldLevelPill.unlocked + "\n");
+                        currentLevel++;
+                        fs.Write(info, 0, info.Length);
+                    }
                 }
-                else
-                {
-                    _overWorldLevelPills[i].SetSelected(true);
-                    currentSelectedPill = _overWorldLevelPills[i];
-                    currentSelectedPillInt = i;
-                }
-                return;
+                
+                fs.Close();
             }
         }
+        Debug.Log(savedFile);
+
+        List<string> levelsToSet = new List<string>();
+        foreach (string line in File.ReadAllLines(savedFile))
+        {
+            levelsToSet.Add(line);
+        }
+
+        int currentLevelSet = 0;
+        OverWorldLevelPill selectedPill = null;
+        foreach(string level in levelsToSet)
+        {
+            string unlocked = level.Substring(level.Length - 5);
+            if(unlocked == "False")
+            {
+                _overWorldLevelPills[currentLevelSet].unlocked = false;
+            }
+            else
+            {
+                selectedPill = _overWorldLevelPills[currentLevelSet];
+                currentSelectedPill = _overWorldLevelPills[currentLevelSet];
+                currentSelectedPillInt = currentLevelSet;
+            }
+            currentLevelSet++;
+        }
+        selectedPill.unlocked = true;
+        selectedPill.SetSelected(true);
     }
 
     private void UpdateSelectedLevel()
