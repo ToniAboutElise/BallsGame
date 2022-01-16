@@ -112,6 +112,10 @@ public class Player : MonoBehaviour
         {
             other.GetComponent<Portal>().Teleport(_camera.transform, this);
         }
+        else if (other.tag == "ColorSwitch")
+        {
+            other.GetComponent<ColorSwitch>().ColorSwitchAction();
+        }
     }
     private void OnTriggerExit(Collider other)
     {

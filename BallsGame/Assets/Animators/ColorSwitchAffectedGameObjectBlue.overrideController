@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ColorSwitchAffectedGameObjectBlue
+  m_Controller: {fileID: 9100000, guid: 2e841370120ec3f46a333f09a6d43982, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 927894352a0f8aa4b9860f81c8c61223, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8b29c26fed482b74fac828155b65a1ec, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8b29c26fed482b74fac828155b65a1ec, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 927894352a0f8aa4b9860f81c8c61223, type: 2}

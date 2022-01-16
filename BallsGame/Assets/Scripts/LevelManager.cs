@@ -8,9 +8,13 @@ public class LevelManager : MonoBehaviour
     public string nextLevel = "0-0";
     [SerializeField] private Text _ballsLeftText;
     [SerializeField] private List<Door> _doorsList = new List<Door>();
+    [SerializeField] private List<ColorSwitch> _colorSwitches = new List<ColorSwitch>();
+    [SerializeField] private List<ColorSwitchAffectedGameObject> _colorSwitchAffectedGameObjects = new List<ColorSwitchAffectedGameObject>();
     private int collectablesAmount = 0;
     private int collectablesGrabbed = 0;
     
+    public List<ColorSwitch> GetColorSwitches() { return _colorSwitches; }
+    public List<ColorSwitchAffectedGameObject> GetColorSwitchAffectedGameObjects() { return _colorSwitchAffectedGameObjects; }
 
     private void Awake()
     {
