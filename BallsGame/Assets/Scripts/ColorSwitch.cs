@@ -27,11 +27,11 @@ public class ColorSwitch : MonoBehaviour
         {
             case CurrentColor.Red:
                 _currentColor = CurrentColor.Blue;
-                _renderer.material = _blue;
+                _renderer.material = _red;
                 break;
             case CurrentColor.Blue:
                 _currentColor = CurrentColor.Red;
-                _renderer.material = _red;
+                _renderer.material = _blue;
                 break;
         }
     }
