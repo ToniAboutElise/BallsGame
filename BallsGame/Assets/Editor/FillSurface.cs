@@ -63,8 +63,24 @@ public class FillSurface : EditorWindow
         {
             SpawnGameObjectInSelection("Level Creation/Collectables/FragileOrbPrefab");
         }
+        if (GUI.Button(new Rect(0 + off, 165 + py + off, 50, 50), "Portal"))
+        {
+            SpawnGameObjectInSelection("Level Creation/Environment/PortalPrefab", 0);
+        }
+        if (GUI.Button(new Rect(50 + px + off, 165 + py + off, 50, 50), "Switch"))
+        {
+            SpawnGameObjectInSelection("Level Creation/Environment/ColorSwitchPrefab", 0);
+        }
+        if (GUI.Button(new Rect(100 + px * 2f + off, 165 + py + off, 50, 50), "SBBlue"))
+        {
+            SpawnGameObjectInSelection("Level Creation/Environment/ColorSwitchAffectedGameObjectBluePrefab", 0);
+        }
+        if (GUI.Button(new Rect(150 + px * 3f + off, 165 + py + off, 50, 50), "SBRed"))
+        {
+            SpawnGameObjectInSelection("Level Creation/Environment/ColorSwitchAffectedGameObjectRedPrefab", 0);
+        }
         GUI.EndGroup();
-        EditorGUILayout.Space(70);
+        EditorGUILayout.Space(150);
         if (GUILayout.Button(clearSettersButton))
         {
             ClearPreparationScripts();

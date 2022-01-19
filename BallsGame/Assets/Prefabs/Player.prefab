@@ -202,9 +202,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
-  m_Height: 1.15
+  m_Height: 1.8350357
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.34251794, z: 0}
 --- !u!114 &5806492397303103950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73ee8c90e7b9524fa10d77ecaaf096f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInput: {fileID: 0}
   _camera: {fileID: 5806492398167507813}
   _rigidBody: {fileID: 5806492397303103947}
   _collider: {fileID: 5806492397303103951}
@@ -293,6 +292,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1ee97bdd-98cc-4c1b-8daf-6a6aad870214
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01816d81-ea4f-434b-86b7-df0d47489766
+    m_ActionName: Player/FaceButtonDown[/SwitchProControllerHID/buttonSouth,/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -11,6 +11,7 @@ TagManager:
   - BubbledOrb
   - GoalStar
   - Portal
+  - ColorSwitch
   layers:
   - Default
   - TransparentFX
