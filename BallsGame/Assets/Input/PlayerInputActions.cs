@@ -44,6 +44,24 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""L1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b999b327-85e6-4e4e-9b70-612f96c61817"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""R1"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab294b9c-64d6-447f-8c9c-6eeae6f0dfed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -189,6 +207,28 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""FaceButtonDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""877f25a1-7e84-4617-a507-cd22af944793"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""L1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a117939a-fbff-4f2c-8f3f-776ad7a9e8e4"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""R1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -260,6 +300,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_FaceButtonDown = m_Player.FindAction("FaceButtonDown", throwIfNotFound: true);
+        m_Player_L1 = m_Player.FindAction("L1", throwIfNotFound: true);
+        m_Player_R1 = m_Player.FindAction("R1", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -321,12 +363,16 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_FaceButtonDown;
+    private readonly InputAction m_Player_L1;
+    private readonly InputAction m_Player_R1;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @FaceButtonDown => m_Wrapper.m_Player_FaceButtonDown;
+        public InputAction @L1 => m_Wrapper.m_Player_L1;
+        public InputAction @R1 => m_Wrapper.m_Player_R1;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -342,6 +388,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @FaceButtonDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFaceButtonDown;
                 @FaceButtonDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFaceButtonDown;
                 @FaceButtonDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFaceButtonDown;
+                @L1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnL1;
+                @L1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnL1;
+                @L1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnL1;
+                @R1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnR1;
+                @R1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnR1;
+                @R1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnR1;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -352,6 +404,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @FaceButtonDown.started += instance.OnFaceButtonDown;
                 @FaceButtonDown.performed += instance.OnFaceButtonDown;
                 @FaceButtonDown.canceled += instance.OnFaceButtonDown;
+                @L1.started += instance.OnL1;
+                @L1.performed += instance.OnL1;
+                @L1.canceled += instance.OnL1;
+                @R1.started += instance.OnR1;
+                @R1.performed += instance.OnR1;
+                @R1.canceled += instance.OnR1;
             }
         }
     }
@@ -405,5 +463,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnFaceButtonDown(InputAction.CallbackContext context);
+        void OnL1(InputAction.CallbackContext context);
+        void OnR1(InputAction.CallbackContext context);
     }
 }
