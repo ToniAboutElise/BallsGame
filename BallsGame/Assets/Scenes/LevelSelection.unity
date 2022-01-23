@@ -378,7 +378,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.7830189, g: 0.6046568, b: 0.46168566, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -391,7 +391,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -791,6 +791,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: stickdude@Fast Run 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5074512353664290214, guid: 7d544c24f7704f140b48c12793aa594f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 073e06c19a2d14043a25d307769f760f, type: 2}
+    - target: {fileID: 5074512353664290214, guid: 7d544c24f7704f140b48c12793aa594f, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3530988303ab5944a4a280ac44edf09, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d544c24f7704f140b48c12793aa594f, type: 3}
 --- !u!1 &559990413
