@@ -62,6 +62,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Camera"",
+                    ""type"": ""Value"",
+                    ""id"": ""28489bb3-d6c7-4d4e-ac58-fbd818720247"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -229,6 +238,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""R1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46d65939-5c64-4dc2-bb32-083e6074b3b7"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -302,6 +322,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_FaceButtonDown = m_Player.FindAction("FaceButtonDown", throwIfNotFound: true);
         m_Player_L1 = m_Player.FindAction("L1", throwIfNotFound: true);
         m_Player_R1 = m_Player.FindAction("R1", throwIfNotFound: true);
+        m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -365,6 +386,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_FaceButtonDown;
     private readonly InputAction m_Player_L1;
     private readonly InputAction m_Player_R1;
+    private readonly InputAction m_Player_Camera;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -373,6 +395,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @FaceButtonDown => m_Wrapper.m_Player_FaceButtonDown;
         public InputAction @L1 => m_Wrapper.m_Player_L1;
         public InputAction @R1 => m_Wrapper.m_Player_R1;
+        public InputAction @Camera => m_Wrapper.m_Player_Camera;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -394,6 +417,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @R1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnR1;
                 @R1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnR1;
                 @R1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnR1;
+                @Camera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
+                @Camera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
+                @Camera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -410,6 +436,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @R1.started += instance.OnR1;
                 @R1.performed += instance.OnR1;
                 @R1.canceled += instance.OnR1;
+                @Camera.started += instance.OnCamera;
+                @Camera.performed += instance.OnCamera;
+                @Camera.canceled += instance.OnCamera;
             }
         }
     }
@@ -465,5 +494,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnFaceButtonDown(InputAction.CallbackContext context);
         void OnL1(InputAction.CallbackContext context);
         void OnR1(InputAction.CallbackContext context);
+        void OnCamera(InputAction.CallbackContext context);
     }
 }

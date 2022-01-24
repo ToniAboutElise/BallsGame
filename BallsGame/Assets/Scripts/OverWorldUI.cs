@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class OverWorldUI : MonoBehaviour
 {
+    [SerializeField] private GameObject _player;
     [SerializeField] private PlayerInputActions _playerInputActions;
     [SerializeField] private Animator _overWorldAnimator;
     [SerializeField] private GameObject _levelSelectionUI;
@@ -40,8 +41,14 @@ public class OverWorldUI : MonoBehaviour
         }
     }
 
+    private void RotatePlayerShowcase()
+    {
+        _player.transform.Rotate(0, -_playerInputActions.Player.Camera.ReadValue<Vector2>().x*5, 0, Space.Self);
+    }
+
     private void FixedUpdate()
     {
         CheckInputActions();
+        RotatePlayerShowcase();
     }
 }
