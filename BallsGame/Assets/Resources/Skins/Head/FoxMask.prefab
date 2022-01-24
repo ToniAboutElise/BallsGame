@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6674622120585751879
+--- !u!1 &1397300132619637217
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6335110953327802365}
-  - component: {fileID: 6936966527724107864}
-  - component: {fileID: 5161680444824341650}
+  - component: {fileID: 3149659465180789380}
+  - component: {fileID: 2590230700949564895}
+  - component: {fileID: 6155559071417415791}
   m_Layer: 0
-  m_Name: FoxMask
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6335110953327802365
+--- !u!4 &3149659465180789380
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6674622120585751879}
-  m_LocalRotation: {x: 0.049168207, y: 0.0062065395, z: 0.017758865, w: 0.9986134}
-  m_LocalPosition: {x: 0.0046903696, y: 0.14773072, z: 0.039307043}
-  m_LocalScale: {x: 0.06911079, y: 0.06911079, z: 0.06911078}
+  m_GameObject: {fileID: 1397300132619637217}
+  m_LocalRotation: {x: -0, y: -0, z: 2.0372679e-10, w: 1}
+  m_LocalPosition: {x: -0, y: 3.57, z: 0.76}
+  m_LocalScale: {x: 1.4024, y: 1.4024, z: 1.4024}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 6335110953327802365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
---- !u!33 &6936966527724107864
+--- !u!33 &2590230700949564895
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6674622120585751879}
+  m_GameObject: {fileID: 1397300132619637217}
   m_Mesh: {fileID: -2515413073326831295, guid: 41b3bf64eb17e764fbef6680f94c76c5, type: 3}
---- !u!23 &5161680444824341650
+--- !u!23 &6155559071417415791
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6674622120585751879}
+  m_GameObject: {fileID: 1397300132619637217}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -83,3 +83,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6674622120585751879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6335110953327802365}
+  m_Layer: 0
+  m_Name: FoxMask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6335110953327802365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674622120585751879}
+  m_LocalRotation: {x: 0.049168207, y: 0.0062065395, z: 0.017758865, w: 0.9986134}
+  m_LocalPosition: {x: 0.0046903696, y: 0.14773072, z: 0.039307043}
+  m_LocalScale: {x: 0.06911079, y: 0.06911079, z: 0.06911078}
+  m_Children:
+  - {fileID: 3149659465180789380}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}

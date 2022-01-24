@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81839754b29aad54da45ecaa4ff336b6, type: 3}
+  m_Name: Sarria
+  m_EditorClassIdentifier: 
+  headAsset: {fileID: 6894523885134015169, guid: 9d09532acb376724fa924744f11f3fcb, type: 3}
+  backAsset: {fileID: 0}
