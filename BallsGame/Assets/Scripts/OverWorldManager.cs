@@ -4,10 +4,12 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class OverWorldManager : MonoBehaviour
 {
+    [SerializeField] EventSystem _eventSystem;
     [SerializeField] PlayerInputActions _playerInputActions;
     [SerializeField] private List<OverWorldWorld> overWorldWorlds = new List<OverWorldWorld>();
     public List<OverWorldLevelPill> _overWorldLevelPills = new List<OverWorldLevelPill>();
@@ -15,6 +17,13 @@ public class OverWorldManager : MonoBehaviour
     private string savedFile;
     private int currentSelectedPillInt;
     private bool canChangeSelectedLevel = true;
+
+    public CurrentOverWorldSection currentOverWorldSection = CurrentOverWorldSection.LevelSelection;
+    public enum CurrentOverWorldSection
+    {
+        LevelSelection,
+        Customize
+    }
 
     private void Awake()
     {
@@ -147,7 +156,7 @@ public class OverWorldManager : MonoBehaviour
     {
         UpdateSelectedLevel();
         
-        if ( _playerInputActions.Player.FaceButtonDown.IsPressed())
+        if ( _playerInputActions.Player.FaceButtonDown.IsPressed() && currentOverWorldSection == CurrentOverWorldSection.LevelSelection)
         {
             LoadLevel();
         }

@@ -1090,7 +1090,8 @@ MonoBehaviour:
   _overWorldAnimator: {fileID: 44598445}
   _levelSelectionUI: {fileID: 185952309}
   _customizeUI: {fileID: 114523929}
-  currentOverWorldSection: 0
+  _selectedFirstCustomizeButton: {fileID: 828849091}
+  _overWorldManager: {fileID: 762478652}
 --- !u!1001 &747125039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1252,10 +1253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac29053b73321d47a7eb99789e331a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventSystem: {fileID: 0}
   overWorldWorlds:
   - {fileID: 2050868677}
   _overWorldLevelPills: []
   currentSelectedPill: {fileID: 0}
+  currentOverWorldSection: 0
 --- !u!1 &806110371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,8 +1321,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.7075472, g: 0.4937925, b: 0.14351194, a: 1}
+    m_SelectedColor: {r: 0.9150943, g: 0.65271103, b: 0.33236915, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1439,8 +1442,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.7075472, g: 0.4937925, b: 0.14351194, a: 1}
+    m_SelectedColor: {r: 0.9150943, g: 0.65271103, b: 0.33236915, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1884,8 +1887,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.7075472, g: 0.4937925, b: 0.14351194, a: 1}
+    m_SelectedColor: {r: 0.9150943, g: 0.65271103, b: 0.33236915, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

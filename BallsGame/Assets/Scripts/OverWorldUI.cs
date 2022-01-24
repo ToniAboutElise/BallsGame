@@ -1,21 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class OverWorldUI : MonoBehaviour
 {
-    [SerializeField] PlayerInputActions _playerInputActions;
-    [SerializeField] Animator _overWorldAnimator;
-
+    [SerializeField] private PlayerInputActions _playerInputActions;
+    [SerializeField] private Animator _overWorldAnimator;
     [SerializeField] private GameObject _levelSelectionUI;
     [SerializeField] private GameObject _customizeUI;
-
-    public CurrentOverWorldSection currentOverWorldSection = CurrentOverWorldSection.LevelSelection;
-    public enum CurrentOverWorldSection
-    {
-        LevelSelection,
-        Customize
-    }
+    [SerializeField] private Button _selectedFirstCustomizeButton;
+    [SerializeField] private OverWorldManager _overWorldManager;
 
     private void Awake()
     {
@@ -27,6 +23,7 @@ public class OverWorldUI : MonoBehaviour
     {
         if (_playerInputActions.Player.L1.IsPressed())
         {
+            _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
             _overWorldAnimator.ResetTrigger("Customize");
             _overWorldAnimator.SetTrigger("LevelSelection");
             _customizeUI.SetActive(false);
@@ -34,10 +31,12 @@ public class OverWorldUI : MonoBehaviour
         }
         else if (_playerInputActions.Player.R1.IsPressed())
         {
+            _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.Customize;
             _overWorldAnimator.ResetTrigger("LevelSelection");
             _overWorldAnimator.SetTrigger("Customize");
             _levelSelectionUI.SetActive(false);
             _customizeUI.SetActive(true);
+            _selectedFirstCustomizeButton.Select();
         }
     }
 
