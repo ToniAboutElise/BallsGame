@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &656764141759358484
+--- !u!1 &1345804040110169786
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 911823587975171704}
-  - component: {fileID: 7571204295002011420}
-  - component: {fileID: 7143116170190491584}
+  - component: {fileID: 9180736800645637663}
+  - component: {fileID: 8831056946325376741}
+  - component: {fileID: 5697146263322207668}
   m_Layer: 0
-  m_Name: DevilTailPoint
+  m_Name: capeMedal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &911823587975171704
+--- !u!4 &9180736800645637663
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656764141759358484}
-  m_LocalRotation: {x: 0.95618045, y: -0.020033678, z: -0.25915146, w: -0.1347518}
-  m_LocalPosition: {x: 1.145, y: -2.603, z: -0.092}
-  m_LocalScale: {x: 0.22371662, y: 0.32526967, z: 0.2605873}
+  m_GameObject: {fileID: 1345804040110169786}
+  m_LocalRotation: {x: -0.5000003, y: -0.49999994, z: -0.49999964, w: 0.5000001}
+  m_LocalPosition: {x: -0.00001136631, y: -0.01703379, z: 0.15199627}
+  m_LocalScale: {x: 0.6921413, y: 0.45822, z: 0.45822}
   m_Children: []
-  m_Father: {fileID: 5189221350489656326}
+  m_Father: {fileID: 1162328901086221621}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -15.55, y: -149.415, z: -181.876}
---- !u!33 &7571204295002011420
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+--- !u!33 &8831056946325376741
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656764141759358484}
-  m_Mesh: {fileID: -5495902117074765545, guid: c3bf8265ff1234c4cb507e72ed0d1504, type: 3}
---- !u!23 &7143116170190491584
+  m_GameObject: {fileID: 1345804040110169786}
+  m_Mesh: {fileID: 2534964839176971238, guid: 751b41481dc843a42b0ceec701576909, type: 3}
+--- !u!23 &5697146263322207668
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656764141759358484}
+  m_GameObject: {fileID: 1345804040110169786}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d7aea5340a552e545845a270e1ce11c0, type: 2}
+  - {fileID: 2100000, guid: 2ff260bbac8db1443b216d6bf11a1415, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,7 +81,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4056380469782510550
+--- !u!1 &4283065173428296592
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,30 +89,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1633491253895836652}
+  - component: {fileID: 1162328901086221621}
   m_Layer: 0
-  m_Name: DevilTail
+  m_Name: HeroCape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1633491253895836652
+--- !u!4 &1162328901086221621
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4056380469782510550}
+  m_GameObject: {fileID: 4283065173428296592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2702345, y: 0.2042044, z: 0.2702345}
+  m_LocalPosition: {x: 0.8628411, y: 1.6193532, z: -0.000000044703484}
+  m_LocalScale: {x: 0.73202986, y: 0.73202986, z: 0.73202986}
   m_Children:
-  - {fileID: 5189221350489656326}
+  - {fileID: 9180736800645637663}
+  - {fileID: 737498201412985922}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7440851846087970552
+--- !u!1 &8213069677035997415
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,38 +121,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5189221350489656326}
-  - component: {fileID: 7909977681197934008}
-  - component: {fileID: 2166928078813007500}
+  - component: {fileID: 737498201412985922}
+  - component: {fileID: 5301034557616190333}
+  - component: {fileID: 9109382291578055317}
   m_Layer: 0
-  m_Name: DevilTailMesh
+  m_Name: cape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5189221350489656326
+--- !u!4 &737498201412985922
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7440851846087970552}
-  m_LocalRotation: {x: -0.9692536, y: 0.04139751, z: 0.23673399, w: -0.05282861}
-  m_LocalPosition: {x: 1.25, y: -0.77, z: -1.01}
-  m_LocalScale: {x: 1.7933758, y: 1.7933758, z: 1.7933758}
-  m_Children:
-  - {fileID: 911823587975171704}
-  m_Father: {fileID: 1633491253895836652}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -184.75, y: 27.703003, z: 6.0630035}
---- !u!23 &7909977681197934008
+  m_GameObject: {fileID: 8213069677035997415}
+  m_LocalRotation: {x: -0.7071069, y: -0.70710665, z: 0.000000044703473, w: -0.00000007054767}
+  m_LocalPosition: {x: 0, y: -0.759, z: -0.445}
+  m_LocalScale: {x: 0.45822, y: 0.45822, z: 0.6921413}
+  m_Children: []
+  m_Father: {fileID: 1162328901086221621}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 90}
+--- !u!33 &5301034557616190333
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213069677035997415}
+  m_Mesh: {fileID: -462981019419857548, guid: 751b41481dc843a42b0ceec701576909, type: 3}
+--- !u!23 &9109382291578055317
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7440851846087970552}
+  m_GameObject: {fileID: 8213069677035997415}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -164,7 +172,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57e29b3083b8c88468bc95b03146511f, type: 2}
+  - {fileID: 2100000, guid: d47b83131a8d5024595a2f6608ef74eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,11 +194,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &2166928078813007500
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7440851846087970552}
-  m_Mesh: {fileID: 150581138598605843, guid: c3bf8265ff1234c4cb507e72ed0d1504, type: 3}

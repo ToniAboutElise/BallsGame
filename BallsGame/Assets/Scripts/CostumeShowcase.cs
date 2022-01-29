@@ -48,5 +48,15 @@ public class CostumeShowcase : MonoBehaviour
             instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
             _currentCostumeAssets.Add(instance);
         }
+
+        if (costume.neckAsset != null)
+        {
+            Transform neck = GameObject.Find("mixamorig:Neck").transform;
+            GameObject instance = Instantiate(costume.neckAsset);
+            instance.transform.SetParent(neck);
+            instance.transform.localPosition = Vector3.zero;
+            instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
+            _currentCostumeAssets.Add(instance);
+        }
     }
 }

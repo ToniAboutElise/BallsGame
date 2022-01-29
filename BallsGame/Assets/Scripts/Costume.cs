@@ -7,4 +7,5 @@ public class Costume : ScriptableObject
 {
     public GameObject headAsset;
     public GameObject backAsset;
+    public GameObject neckAsset;
 }
