@@ -742,14 +742,14 @@ PrefabInstance:
     - target: {fileID: 6677002022429074928, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
       propertyPath: costume
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 4e7a1f6e96fc9894f8cce7dca473a23b, type: 2}
     - target: {fileID: 8883830576497170863, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
       propertyPath: m_Name
       value: CostumeButton (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8883830576497170863, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
@@ -1594,6 +1594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dec4552f745124cb7cdc4a137221a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 418122693}
   _overWorldAnimator: {fileID: 44598445}
   _levelSelectionUI: {fileID: 185952309}
   _customizeUI: {fileID: 114523929}
@@ -2917,13 +2918,17 @@ PrefabInstance:
       propertyPath: m_Text
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6677002022429074928, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
+      propertyPath: costume
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bdec1f25f0abaa4e971694f4cea87a2, type: 2}
     - target: {fileID: 8883830576497170863, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
       propertyPath: m_Name
       value: CostumeButton (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8883830576497170863, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
@@ -3965,7 +3970,7 @@ MonoBehaviour:
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
