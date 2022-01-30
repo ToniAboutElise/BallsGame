@@ -14,6 +14,11 @@ public class CostumeButton : MonoBehaviour, ISelectHandler
         Debug.Log("TES");
     }
 
+    public void SetCostume()
+    {
+        GameManagerSingleton.GetInstance().selectedCostume = costume;
+    }
+
     private void LoadCostume()
     {
         costumeShowcase.LoadNewCostume(costume);

@@ -3925,13 +3925,17 @@ PrefabInstance:
       propertyPath: m_Text
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6677002022429074928, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
+      propertyPath: costume
+      value: 
+      objectReference: {fileID: 11400000, guid: 03bef790a4d8a4240805f6592a5e4ea9, type: 2}
     - target: {fileID: 8883830576497170863, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
       propertyPath: m_Name
       value: CostumeButton (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8883830576497170863, guid: 2837795782d54434d85880ad2c216d4e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2837795782d54434d85880ad2c216d4e, type: 3}

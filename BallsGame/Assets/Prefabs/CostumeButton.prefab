@@ -200,7 +200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1474048812103384611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6677002022429074928}
+        m_TargetAssemblyTypeName: CostumeButton, Assembly-CSharp
+        m_MethodName: SetCostume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6677002022429074928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,3 +225,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fad6d4586df37d439a40748b5192366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumeShowcase: {fileID: 0}
+  costume: {fileID: 0}

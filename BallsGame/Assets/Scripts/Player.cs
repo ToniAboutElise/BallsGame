@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
     }
     private void FixPositionWhileRotating()
     {
-        if (isRotating == true)
+        if (isRotating == true && _collectable != null)
         {
             transform.localPosition = _collectable.transform.position;
         }
@@ -238,11 +238,5 @@ public class Player : MonoBehaviour
         Velocity();
         Rotation();
         FixPositionWhileRotating();
-        /*
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("LevelSelection", LoadSceneMode.Single);
-        }
-        */
     }
 }

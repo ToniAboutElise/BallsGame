@@ -23,6 +23,9 @@ public class LevelManager : MonoBehaviour
             if(collectable.GetCollectableState() == Collectable.CollectableState.NonCollected || collectable.GetCollectableState() == Collectable.CollectableState.ProtectedByAdditionalEffect)
             collectablesAmount++;
         }
+
+        GameManagerSingleton.GetInstance().PlaceCostumeIntoPlayer();
+
         Debug.Log(collectablesAmount);
         _ballsLeftText.text = collectablesAmount.ToString();
     }
