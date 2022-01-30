@@ -11,7 +11,6 @@ public class CostumeButton : MonoBehaviour, ISelectHandler
     public void OnSelect(BaseEventData eventData)
     {
         LoadCostume();
-        Debug.Log("TES");
     }
 
     public void SetCostume()

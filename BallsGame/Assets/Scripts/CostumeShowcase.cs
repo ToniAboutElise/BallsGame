@@ -36,6 +36,7 @@ public class CostumeShowcase : MonoBehaviour
             instance.transform.SetParent(head);
             instance.transform.localPosition = Vector3.zero;
             instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
+            instance.transform.localScale = Vector3.one;
             _currentCostumeAssets.Add(instance);
         }
 
@@ -46,6 +47,7 @@ public class CostumeShowcase : MonoBehaviour
             instance.transform.SetParent(back);
             instance.transform.localPosition = Vector3.zero;
             instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
+            instance.transform.localScale = Vector3.one;
             _currentCostumeAssets.Add(instance);
         }
 
@@ -56,6 +58,7 @@ public class CostumeShowcase : MonoBehaviour
             instance.transform.SetParent(neck);
             instance.transform.localPosition = Vector3.zero;
             instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
+            instance.transform.localScale = Vector3.one;
             _currentCostumeAssets.Add(instance);
         }
     }

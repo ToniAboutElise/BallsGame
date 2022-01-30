@@ -29,16 +29,13 @@ public class GameManagerSingleton : MonoBehaviour
         if(selectedCostume == null)
             return;
 
-        float offset = 0.24116f;
-
             if (selectedCostume.headAsset != null)
             {
                 Transform head = GameObject.Find("mixamorig:Head").transform;
                 GameObject instance = Instantiate(selectedCostume.headAsset);
                 instance.transform.SetParent(head);
                 instance.transform.localPosition = Vector3.zero;
-                instance.transform.localScale = Vector3.one;
-                instance.transform.localScale -= new Vector3(offset, offset, offset);
+                instance.transform.localScale = Vector3.one * 1.1f;
                 instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
             }
 
@@ -48,8 +45,7 @@ public class GameManagerSingleton : MonoBehaviour
                 GameObject instance = Instantiate(selectedCostume.backAsset);
                 instance.transform.SetParent(back);
                 instance.transform.localPosition = Vector3.zero;
-                instance.transform.localScale = Vector3.one;
-                instance.transform.localScale -= new Vector3(offset, offset, offset);
+                instance.transform.localScale = Vector3.one * 1.1f;
                 instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
             }
 
@@ -59,8 +55,7 @@ public class GameManagerSingleton : MonoBehaviour
                 GameObject instance = Instantiate(selectedCostume.neckAsset);
                 instance.transform.SetParent(neck);
                 instance.transform.localPosition = Vector3.zero;
-                instance.transform.localScale = Vector3.one;
-                instance.transform.localScale -= new Vector3(offset, offset, offset);
+                instance.transform.localScale = Vector3.one * 1.1f;
                 instance.transform.localRotation = new Quaternion(0, 0, 0, 0);
             }
         }
