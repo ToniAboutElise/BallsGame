@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public string nextLevel = "0-0";
+    [SerializeField] private Player _player;
+    [SerializeField] private Animation _countdownAnimation;
     [SerializeField] private Text _ballsLeftText;
     [SerializeField] private List<Door> _doorsList = new List<Door>();
     [SerializeField] private List<ColorSwitch> _colorSwitches = new List<ColorSwitch>();
@@ -18,6 +20,8 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        StartCoroutine(Countdown());
+
         foreach(Collectable collectable in FindObjectsOfType<Collectable>())
         {
             if(collectable.GetCollectableState() == Collectable.CollectableState.NonCollected || collectable.GetCollectableState() == Collectable.CollectableState.ProtectedByAdditionalEffect)
@@ -41,6 +45,15 @@ public class LevelManager : MonoBehaviour
         {
             UpdateDoorsRequiredCollectables();
         }
+    }
+
+    private IEnumerator Countdown()
+    {
+        float initialVelocity = _player.GetVelocity();
+        _player.SetVelocity(0);
+        _countdownAnimation.Play();
+        yield return new WaitForSeconds(4);
+        _player.SetVelocity(initialVelocity);
     }
 
     private void CheckIfLevelIsCompleted()

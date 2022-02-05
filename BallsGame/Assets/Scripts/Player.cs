@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     private PlayerInputActions playerInputActions;
     private float _rotationFloat = 0;
 
+    public void SetVelocity(float velocity) { _velocity = velocity; }
+    public float GetVelocity() { return _velocity; }
+
     private CurrentRotationDegrees currentRotationDegrees = CurrentRotationDegrees._0;
 
     private enum CurrentRotationDegrees
