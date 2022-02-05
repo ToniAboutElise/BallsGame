@@ -15,8 +15,9 @@ public class OverWorldManager : MonoBehaviour
     public List<OverWorldLevelPill> _overWorldLevelPills = new List<OverWorldLevelPill>();
     [SerializeField] private OverWorldLevelPill currentSelectedPill;
     private string savedFile;
-    private int currentSelectedPillInt;
-    private bool canChangeSelectedLevel = true;
+    private int _currentSelectedPillInt;
+    private bool _canChangeSelectedLevel = true;
+    private bool _loadingLevel = false;
 
     public CurrentOverWorldSection currentOverWorldSection = CurrentOverWorldSection.LevelSelection;
     public enum CurrentOverWorldSection
@@ -98,7 +99,7 @@ public class OverWorldManager : MonoBehaviour
                 _overWorldLevelPills[currentLevelSet].SetLockState(true);
                 selectedPill = _overWorldLevelPills[currentLevelSet];
                 currentSelectedPill = _overWorldLevelPills[currentLevelSet];
-                currentSelectedPillInt = currentLevelSet;
+                _currentSelectedPillInt = currentLevelSet;
             }
             currentLevelSet++;
         }
@@ -107,7 +108,7 @@ public class OverWorldManager : MonoBehaviour
         {
             selectedPill = _overWorldLevelPills[0];
             currentSelectedPill = _overWorldLevelPills[0];
-            currentSelectedPillInt = 0;
+            _currentSelectedPillInt = 0;
         }
 
         selectedPill.unlocked = true;
@@ -120,31 +121,31 @@ public class OverWorldManager : MonoBehaviour
     private void UpdateSelectedLevel()
     {
 
-        if (_playerInputActions.Player.Move.ReadValue<Vector2>().x > 0.3f && canChangeSelectedLevel == true)
+        if (_playerInputActions.Player.Move.ReadValue<Vector2>().x > 0.3f && _canChangeSelectedLevel == true)
         {
-            canChangeSelectedLevel = false;
-            if (currentSelectedPill != _overWorldLevelPills[_overWorldLevelPills.Count - 1] && _overWorldLevelPills[currentSelectedPillInt + 1].unlocked == true)
+            _canChangeSelectedLevel = false;
+            if (currentSelectedPill != _overWorldLevelPills[_overWorldLevelPills.Count - 1] && _overWorldLevelPills[_currentSelectedPillInt + 1].unlocked == true)
             {
                 currentSelectedPill.SetSelected(false);
-                currentSelectedPillInt++;
-                currentSelectedPill = _overWorldLevelPills[currentSelectedPillInt];
+                _currentSelectedPillInt++;
+                currentSelectedPill = _overWorldLevelPills[_currentSelectedPillInt];
                 currentSelectedPill.SetSelected(true);
             }
         }
-        else if (_playerInputActions.Player.Move.ReadValue<Vector2>().x < -0.3f && canChangeSelectedLevel == true)
+        else if (_playerInputActions.Player.Move.ReadValue<Vector2>().x < -0.3f && _canChangeSelectedLevel == true)
         {
-            canChangeSelectedLevel = false;
-            if (currentSelectedPill != _overWorldLevelPills[0] && _overWorldLevelPills[currentSelectedPillInt - 1].unlocked == true)
+            _canChangeSelectedLevel = false;
+            if (currentSelectedPill != _overWorldLevelPills[0] && _overWorldLevelPills[_currentSelectedPillInt - 1].unlocked == true)
             {
                 currentSelectedPill.SetSelected(false);
-                currentSelectedPillInt--;
-                currentSelectedPill = _overWorldLevelPills[currentSelectedPillInt];
+                _currentSelectedPillInt--;
+                currentSelectedPill = _overWorldLevelPills[_currentSelectedPillInt];
                 currentSelectedPill.SetSelected(true);
             }
         }
         else if (_playerInputActions.Player.Move.ReadValue<Vector2>().x > -0.15f && _playerInputActions.Player.Move.ReadValue<Vector2>().x < 0.15f)
         {
-            canChangeSelectedLevel = true;
+            _canChangeSelectedLevel = true;
         }
     }
 
@@ -156,8 +157,9 @@ public class OverWorldManager : MonoBehaviour
     {
         UpdateSelectedLevel();
         
-        if ( _playerInputActions.Player.FaceButtonDown.IsPressed() && currentOverWorldSection == CurrentOverWorldSection.LevelSelection)
+        if ( _playerInputActions.Player.FaceButtonDown.IsPressed() && currentOverWorldSection == CurrentOverWorldSection.LevelSelection && _loadingLevel == false)
         {
+            _loadingLevel = true;
             LoadLevel();
         }
         
