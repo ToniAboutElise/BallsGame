@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
         float initialVelocity = _player.GetVelocity();
         _player.SetVelocity(0);
         _countdownAnimation.Play();
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         _player.SetVelocity(initialVelocity);
     }
 

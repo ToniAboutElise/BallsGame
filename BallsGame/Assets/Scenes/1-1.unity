@@ -16354,6 +16354,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326635907}
   m_Mesh: {fileID: -5495902117074765545, guid: 5a3a35d481f7b214da21db0744dfa2ae, type: 3}
+--- !u!114 &327630518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5806492397303103950, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
+  m_PrefabInstance: {fileID: 1467917405432597527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73ee8c90e7b9524fa10d77ecaaf096f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &329233570
 GameObject:
   m_ObjectHideFlags: 0
@@ -30922,6 +30933,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!111 &606743478 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 7042044560268850818, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+  m_PrefabInstance: {fileID: 3490430040771340627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &607600942
 GameObject:
   m_ObjectHideFlags: 0
@@ -63307,6 +63323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 1-2
+  _player: {fileID: 327630518}
+  _countdownAnimation: {fileID: 606743478}
   _ballsLeftText: {fileID: 1236507626}
   _doorsList:
   - {fileID: 1159412320}
@@ -107707,6 +107725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7042044560268850818, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 6f4b76e937206ce46b5c94c8ef2b80d2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
 --- !u!4 &4481730606625731357 stripped

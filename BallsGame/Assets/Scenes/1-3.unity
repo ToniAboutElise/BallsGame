@@ -12086,6 +12086,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
+--- !u!114 &204483307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5806492397303103950, guid: 06b1710d63a63ce4eb1dc501da8439e2, type: 3}
+  m_PrefabInstance: {fileID: 204483306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f73ee8c90e7b9524fa10d77ecaaf096f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &205191091
 GameObject:
   m_ObjectHideFlags: 0
@@ -79495,9 +79506,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: 1-4
+  _player: {fileID: 204483307}
+  _countdownAnimation: {fileID: 3490430040771340628}
   _ballsLeftText: {fileID: 1236507626}
   _doorsList:
   - {fileID: 1287916486}
+  _colorSwitches: []
+  _colorSwitchAffectedGameObjects: []
 --- !u!4 &1225707251
 Transform:
   m_ObjectHideFlags: 0
@@ -135417,6 +135432,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+--- !u!111 &3490430040771340628 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 7042044560268850818, guid: 116d1b02677079b4191d91880acfe88e, type: 3}
+  m_PrefabInstance: {fileID: 3490430040771340627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4481730606625731357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 53876136137848340, guid: 8baaba43c29522f41b8d7c9dd4676a15, type: 3}
