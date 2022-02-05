@@ -16,7 +16,8 @@ public class OverWorldManager : MonoBehaviour
     [SerializeField] private OverWorldLevelPill currentSelectedPill;
     private string savedFile;
     private int _currentSelectedPillInt;
-    private bool _canChangeSelectedLevel = true;
+    private bool _canEnterLevel = false;
+    private bool _canChangeSelectedLevel = false;
     private bool _loadingLevel = false;
 
     public CurrentOverWorldSection currentOverWorldSection = CurrentOverWorldSection.MainMenu;
@@ -29,10 +30,22 @@ public class OverWorldManager : MonoBehaviour
 
     private void Awake()
     {
+        _canChangeSelectedLevel = false;
         _playerInputActions = new PlayerInputActions();
         _playerInputActions.Player.Enable();
         ResetLevelsUnlocked();
         CheckUnlockedLevels();
+    }
+
+    public void AllowNavigation()
+    {
+        StartCoroutine(AllowLevelNavigationCR());
+    }
+
+    private IEnumerator AllowLevelNavigationCR()
+    {
+        yield return new WaitForSeconds(1.7f);
+        _canEnterLevel = true;
     }
 
     private void ResetLevelsUnlocked()
@@ -158,7 +171,7 @@ public class OverWorldManager : MonoBehaviour
     {
         UpdateSelectedLevel();
 
-        if (_playerInputActions.Player.FaceButtonDown.IsPressed() && currentOverWorldSection == CurrentOverWorldSection.LevelSelection && _loadingLevel == false)
+        if (_playerInputActions.Player.FaceButtonDown.IsPressed() && currentOverWorldSection == CurrentOverWorldSection.LevelSelection && _loadingLevel == false && _canEnterLevel == true)
         {
             _loadingLevel = true;
             LoadLevel();

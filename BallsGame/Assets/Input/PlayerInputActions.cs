@@ -38,7 +38,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""FaceButtonDown"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""01816d81-ea4f-434b-86b7-df0d47489766"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
