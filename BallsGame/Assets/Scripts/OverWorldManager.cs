@@ -19,9 +19,10 @@ public class OverWorldManager : MonoBehaviour
     private bool _canChangeSelectedLevel = true;
     private bool _loadingLevel = false;
 
-    public CurrentOverWorldSection currentOverWorldSection = CurrentOverWorldSection.LevelSelection;
+    public CurrentOverWorldSection currentOverWorldSection = CurrentOverWorldSection.MainMenu;
     public enum CurrentOverWorldSection
     {
+        MainMenu,
         LevelSelection,
         Customize
     }
@@ -156,8 +157,8 @@ public class OverWorldManager : MonoBehaviour
     private void Update()
     {
         UpdateSelectedLevel();
-        
-        if ( _playerInputActions.Player.FaceButtonDown.IsPressed() && currentOverWorldSection == CurrentOverWorldSection.LevelSelection && _loadingLevel == false)
+
+        if (_playerInputActions.Player.FaceButtonDown.IsPressed() && currentOverWorldSection == CurrentOverWorldSection.LevelSelection && _loadingLevel == false)
         {
             _loadingLevel = true;
             LoadLevel();

@@ -9,6 +9,7 @@ public class OverWorldUI : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private PlayerInputActions _playerInputActions;
     [SerializeField] private Animator _overWorldAnimator;
+    [SerializeField] private GameObject _mainMenuUI;
     [SerializeField] private GameObject _levelSelectionUI;
     [SerializeField] private GameObject _customizeUI;
     [SerializeField] private Button _selectedFirstCustomizeButton;
@@ -22,22 +23,46 @@ public class OverWorldUI : MonoBehaviour
 
     private void CheckInputActions()
     {
-        if (_playerInputActions.Player.L1.IsPressed())
-        {
-            _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
-            _overWorldAnimator.ResetTrigger("Customize");
-            _overWorldAnimator.SetTrigger("LevelSelection");
-            _customizeUI.SetActive(false);
-            _levelSelectionUI.SetActive(true);
+        if(_overWorldManager.currentOverWorldSection != OverWorldManager.CurrentOverWorldSection.MainMenu) 
+        { 
+            if (_playerInputActions.Player.L1.IsPressed())
+            {
+                _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
+                _overWorldAnimator.ResetTrigger("Customize");
+                _overWorldAnimator.SetTrigger("LevelSelection");
+                _customizeUI.SetActive(false);
+                _levelSelectionUI.SetActive(true);
+            }
+            else if (_playerInputActions.Player.R1.IsPressed())
+            {
+                _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.Customize;
+                _overWorldAnimator.ResetTrigger("LevelSelection");
+                _overWorldAnimator.SetTrigger("Customize");
+                _levelSelectionUI.SetActive(false);
+                _customizeUI.SetActive(true);
+                _selectedFirstCustomizeButton.Select();
+            }
         }
-        else if (_playerInputActions.Player.R1.IsPressed())
+    }
+
+    public void GoToSection()
+    {
+        switch (_overWorldManager.currentOverWorldSection)
         {
-            _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.Customize;
-            _overWorldAnimator.ResetTrigger("LevelSelection");
-            _overWorldAnimator.SetTrigger("Customize");
-            _levelSelectionUI.SetActive(false);
-            _customizeUI.SetActive(true);
-            _selectedFirstCustomizeButton.Select();
+            case OverWorldManager.CurrentOverWorldSection.LevelSelection:
+                _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.MainMenu;
+                _overWorldAnimator.ResetTrigger("LevelSelection");
+                _overWorldAnimator.SetTrigger("MainMenu");
+                _mainMenuUI.SetActive(true);
+                _levelSelectionUI.SetActive(false);
+                break;
+            case OverWorldManager.CurrentOverWorldSection.MainMenu:
+                _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
+                _overWorldAnimator.ResetTrigger("MainMenu");
+                _overWorldAnimator.SetTrigger("LevelSelection");
+                _mainMenuUI.SetActive(false);
+                _levelSelectionUI.SetActive(true);
+                break;
         }
     }
 
