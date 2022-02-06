@@ -1,18 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class LevelUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private EventSystem _eventSystem;
+    [SerializeField] private GameObject _resumeButton;
+    private PlayerInputActions _playerInputActions;
+
+    private void Awake()
     {
-        
+        _playerInputActions = new PlayerInputActions();
+        _playerInputActions.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DisablePauseMenu()
     {
-        
+        Time.timeScale = 1;
+        _pauseMenu.SetActive(false);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("LevelSelection", LoadSceneMode.Single);
+    }
+
+    private void CheckPauseMenu()
+    {
+        if (_playerInputActions.Player.Start.IsPressed())
+        {
+            Time.timeScale = 0;
+            _pauseMenu.SetActive(true);
+            _eventSystem.SetSelectedGameObject(_resumeButton);
+        }
+    }
+
+    private void LateUpdate()
+    {
+        CheckPauseMenu();
     }
 }

@@ -71,6 +71,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""a6c62602-8071-4c27-afae-cabd109c884a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -260,6 +269,28 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Camera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5888656f-fec4-448e-8388-e21c104c6e44"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b01b295a-4108-4c8f-9d1e-42fade918f0e"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -334,6 +365,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player_L1 = m_Player.FindAction("L1", throwIfNotFound: true);
         m_Player_R1 = m_Player.FindAction("R1", throwIfNotFound: true);
         m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
+        m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -398,6 +430,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_L1;
     private readonly InputAction m_Player_R1;
     private readonly InputAction m_Player_Camera;
+    private readonly InputAction m_Player_Start;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -407,6 +440,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @L1 => m_Wrapper.m_Player_L1;
         public InputAction @R1 => m_Wrapper.m_Player_R1;
         public InputAction @Camera => m_Wrapper.m_Player_Camera;
+        public InputAction @Start => m_Wrapper.m_Player_Start;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -431,6 +465,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Camera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Camera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
+                @Start.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -450,6 +487,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Camera.started += instance.OnCamera;
                 @Camera.performed += instance.OnCamera;
                 @Camera.canceled += instance.OnCamera;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
             }
         }
     }
@@ -506,5 +546,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnL1(InputAction.CallbackContext context);
         void OnR1(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
     }
 }
