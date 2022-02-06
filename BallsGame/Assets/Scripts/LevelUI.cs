@@ -30,7 +30,7 @@ public class LevelUI : MonoBehaviour
 
     private void CheckPauseMenu()
     {
-        if (_playerInputActions.Player.Start.IsPressed())
+        if (_playerInputActions.Player.Start.IsPressed() && _pauseMenu.activeSelf == false)
         {
             Time.timeScale = 0;
             _pauseMenu.SetActive(true);

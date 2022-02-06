@@ -78,6 +78,6 @@ public class Settings : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("LevelSelectionMenu", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("LevelSelectionMenu", LoadSceneMode.Single);
     }
 }
