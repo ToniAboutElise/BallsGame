@@ -3168,7 +3168,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1975704173}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: SetAA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &734750923
 GameObject:
@@ -4618,13 +4630,25 @@ MonoBehaviour:
     m_Options:
     - m_Text: Full Screen
       m_Image: {fileID: 0}
-    - m_Text: Full Screen Window
+    - m_Text: Full Screen Windowed
       m_Image: {fileID: 0}
     - m_Text: Windowed
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1975704173}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: SetScreenMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &869349169
 MonoBehaviour:
@@ -7656,7 +7680,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1975704173}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: SetVSync
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1729436600
 GameObject:
@@ -8352,12 +8388,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resolutionText: {fileID: 1364065552}
+  _screenModeText: {fileID: 0}
+  _screenModeDropdown: {fileID: 869349168}
+  _vSyncToggle: {fileID: 1722112406}
+  _aaToggle: {fileID: 708501913}
   mouseSens: {fileID: 0}
   aa: {fileID: 0}
   Character: {fileID: 0}
   myCanvas: {fileID: 0}
-  VsyncToggle: {fileID: 0}
-  AAPos: {fileID: 0}
   WindowedToggle: {fileID: 0}
   FPSAudioListener: {fileID: 0}
   flashlight: {fileID: 0}

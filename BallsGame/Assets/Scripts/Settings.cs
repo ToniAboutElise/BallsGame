@@ -8,12 +8,15 @@ using UnityEngine;
 public class Settings : MonoBehaviour
 {
     [SerializeField] private TMP_Text _resolutionText;
+    [SerializeField] private TMP_Text _screenModeText; //?
+    [SerializeField] private TMP_Dropdown _screenModeDropdown;
+    [SerializeField] Toggle _vSyncToggle;
+    [SerializeField] Toggle _aaToggle;
+
     public Slider mouseSens;
     public Text aa;
     public GameObject Character;
     public GameObject myCanvas;
-    public Toggle VsyncToggle;
-    public Toggle AAPos;
     public Toggle WindowedToggle;
     bool isActive;
     bool Vsync;
@@ -21,37 +24,35 @@ public class Settings : MonoBehaviour
     public GameObject FPSAudioListener;
     public GameObject flashlight;
 
-    public void Windowed()
+    public void SetScreenMode()
     {
-        if (isWindowed)
+        switch (_screenModeDropdown.value)
         {
-            Debug.Log("Windowed");
-            Screen.fullScreen = true;
-            isWindowed = false;
-            WindowedToggle.isOn = false;
-        }
-        else
-        {
-            Debug.Log("NO Windowed");
-            Screen.fullScreen = false;
-            isWindowed = true;
-            WindowedToggle.isOn = true;
+            case 0: //Full Screen
+                Screen.fullScreen = true;
+                isWindowed = false;
+                break;
+            case 1: //Full Screen Windowed
+                Screen.fullScreen = true;
+                isWindowed = true;
+                break;
+            case 2: //Windowed
+                Screen.fullScreen = false;
+                isWindowed = true;
+                break;
         }
     }
 
-    public void VsyncOn()
+    public void SetVSync()
     {
-        if (!Vsync)
-        {
-            Debug.Log("on");
-            QualitySettings.vSyncCount = 1;
-            Vsync = true;
-        }
-        else
-        {
-            Debug.Log("off");
-            QualitySettings.vSyncCount = 0;
-            Vsync = false;
+        switch (_vSyncToggle.isOn)
+        { 
+            case true:
+                QualitySettings.vSyncCount = 1;
+                break;
+            case false:
+                QualitySettings.vSyncCount = 0;
+                break;
         }
     }
 
@@ -59,25 +60,19 @@ public class Settings : MonoBehaviour
     {
         string[] resolutionStrings = _resolutionText.text.Split('x');
         Screen.SetResolution(int.Parse(resolutionStrings[0]), int.Parse(resolutionStrings[1]), true);
+        SetScreenMode();
     }
 
     public void SetAA()
     {
-        if (aa.text == "No AA")
+        switch ( _aaToggle.isOn)
         {
-            QualitySettings.antiAliasing = 0;
-        }
-        else if (aa.text == "2 SAMPLES")
-        {
-            QualitySettings.antiAliasing = 2;
-        }
-        else if (aa.text == "4 SAMPLES")
-        {
-            QualitySettings.antiAliasing = 4;
-        }
-        else if (aa.text == "8 SAMPLES")
-        {
-            QualitySettings.antiAliasing = 8;
+            case true:
+                QualitySettings.antiAliasing = 4;
+                break;
+            case false:
+                QualitySettings.antiAliasing = 0;
+                break;
         }
     }
 
