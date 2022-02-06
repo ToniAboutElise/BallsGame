@@ -76,6 +76,11 @@ public class Settings : MonoBehaviour
         }
     }
 
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
+
     public void MainMenu()
     {
         SceneManager.LoadSceneAsync("LevelSelectionMenu", LoadSceneMode.Single);

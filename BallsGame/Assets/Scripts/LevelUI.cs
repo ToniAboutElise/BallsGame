@@ -25,7 +25,8 @@ public class LevelUI : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("LevelSelection", LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("LevelSelection", LoadSceneMode.Single);
+        Time.timeScale = 1;
     }
 
     private void CheckPauseMenu()

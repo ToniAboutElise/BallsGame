@@ -14,6 +14,8 @@ public class GameManagerSingleton : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         if(FindObjectsOfType<GameManagerSingleton>().Length > 1) 
         {
             Destroy(gameObject);
