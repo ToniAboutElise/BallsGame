@@ -65,7 +65,7 @@ public class Settings : MonoBehaviour
 
     public void SetAA()
     {
-        switch ( _aaToggle.isOn)
+        switch (_aaToggle.isOn)
         {
             case true:
                 QualitySettings.antiAliasing = 4;
