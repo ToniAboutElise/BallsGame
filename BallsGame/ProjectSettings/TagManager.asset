@@ -12,6 +12,7 @@ TagManager:
   - GoalStar
   - Portal
   - ColorSwitch
+  - Door
   layers:
   - Default
   - TransparentFX
