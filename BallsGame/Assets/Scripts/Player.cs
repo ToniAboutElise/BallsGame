@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _auxForward;
     private Collectable _collectable;
     public bool canRun = true;
-    public bool canRotate = true;
+    public bool canRotate;
     public bool isRotating = false;
     private bool _hasRotated = false;
     private PlayerInputActions playerInputActions;

@@ -40,7 +40,6 @@ public class LevelManager : MonoBehaviour
         collectablesAmount--;
         collectablesGrabbed++;
         _ballsLeftText.text = collectablesAmount.ToString();
-        CheckIfLevelIsCompleted();
         if(_doorsList.Count > 0)
         {
             UpdateDoorsRequiredCollectables();
@@ -50,18 +49,12 @@ public class LevelManager : MonoBehaviour
     private IEnumerator Countdown()
     {
         float initialVelocity = _player.GetVelocity();
+        _player.canRotate = false;
         _player.SetVelocity(0);
         _countdownAnimation.Play();
         yield return new WaitForSeconds(3);
         _player.SetVelocity(initialVelocity);
-    }
-
-    private void CheckIfLevelIsCompleted()
-    {
-        if(collectablesAmount == 0)
-        {
-            //end level
-        }
+        _player.canRotate = true;
     }
 
     private void UpdateDoorsRequiredCollectables()
