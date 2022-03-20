@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private List<Door> _doorsList = new List<Door>();
     [SerializeField] private List<ColorSwitch> _colorSwitches = new List<ColorSwitch>();
     [SerializeField] private List<ColorSwitchAffectedGameObject> _colorSwitchAffectedGameObjects = new List<ColorSwitchAffectedGameObject>();
+    [SerializeField] private AudioClip _levelSong;
+    private AudioSource _songAudioSource;
     private int collectablesAmount = 0;
     private int collectablesGrabbed = 0;
     
@@ -20,6 +22,10 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+        _songAudioSource = FindObjectOfType<AudioManager>().GetLevelSongAudioSource();
+        _songAudioSource.clip = _levelSong;
+        _songAudioSource.Play();
+
         StartCoroutine(Countdown());
 
         foreach(Collectable collectable in FindObjectsOfType<Collectable>())

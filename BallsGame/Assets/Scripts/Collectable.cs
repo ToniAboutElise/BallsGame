@@ -7,8 +7,10 @@ public class Collectable : MonoBehaviour
     [SerializeField] private Renderer _renderer;
     [SerializeField] private Material _nonCollected;
     [SerializeField] private Material _collected;
+    [SerializeField] private AudioClip _collectedSFXAudioClip;
 
     [SerializeField] protected CollectableState collectableState = CollectableState.NonCollected;
+
     public enum CollectableState
     {
         NonCollected,
@@ -30,6 +32,8 @@ public class Collectable : MonoBehaviour
     {
         return collectableState;
     }
+
+    public AudioClip GetCollectedSFXAudioClip() { return _collectedSFXAudioClip; }
 
     public virtual void AdditionalEffect() { }
 }

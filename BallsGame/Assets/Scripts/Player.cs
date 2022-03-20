@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator _cameraAnimator;
     [SerializeField] private Animator _characterAnimator;
     [SerializeField] private Transform _auxForward;
+    private AudioSource _levelSongAudioSource;
+    private AudioSource _sfxAudioSource;
     private Collectable _collectable;
     public bool canRun = true;
     public bool canRotate;
@@ -90,7 +92,14 @@ public class Player : MonoBehaviour
         {
             _collectable = other.GetComponent<Collectable>();
 
-            if(other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.Collected)
+            if(_collectable.GetCollectedSFXAudioClip() != null) 
+            {
+                _sfxAudioSource = FindObjectOfType<AudioManager>().GetSFXAudioSource();
+                _sfxAudioSource.clip = _collectable.GetCollectedSFXAudioClip();
+                _sfxAudioSource.Play();
+            }
+
+            if (other.GetComponent<Collectable>().GetCollectableState() == Collectable.CollectableState.Collected)
             {
                 Lose();
                 return;
@@ -231,6 +240,8 @@ public class Player : MonoBehaviour
     {
         LevelEndSaveFile.SaveFileEndLevel(_levelManager.nextLevel);
         yield return new WaitForSeconds(5);
+        _levelSongAudioSource.Stop();
+        _levelSongAudioSource.clip = null;
         SceneManager.LoadSceneAsync("LevelSelection", LoadSceneMode.Single);
     }
 
