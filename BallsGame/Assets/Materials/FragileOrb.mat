@@ -92,7 +92,7 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineDepthSensitivity: 1
     - _OutlineNormalsSensitivity: 1
-    - _OutlineThickness: 2.53
+    - _OutlineThickness: 0
     - _Parallax: 0.02
     - _Smoothness: 0.9
     - _SmoothnessTextureChannel: 0

@@ -1265,6 +1265,22 @@ PrefabInstance:
       propertyPath: m_CellSize.x
       value: 52.2
       objectReference: {fileID: 0}
+    - target: {fileID: 332350960285408687, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332350960285408687, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332350960285408687, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 332350960285408687, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 763038071848307035, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
       propertyPath: m_Color.b
       value: 0
