@@ -104,7 +104,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Programmed and designed by Toni Dom\xEDnguez using the Unity Game Engine,
     property of Unity Technologies.\n\n\nDramatic Retro Game Music Tracks by AndySv
-    - MuzStation Game Music.\n\n\n\nwww.tonidominguez.com"
+    - MuzStation Game Music.\n\nSound Effects created using BFXR by Stephen Lavelle.\n\n\n\nwww.tonidominguez.com"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

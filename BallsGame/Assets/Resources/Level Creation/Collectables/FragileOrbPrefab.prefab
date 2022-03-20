@@ -91,5 +91,6 @@ MonoBehaviour:
   _renderer: {fileID: 8417818638209718891}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 8417818638209718891}
