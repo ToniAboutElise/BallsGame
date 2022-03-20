@@ -12,6 +12,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private TMP_Dropdown _screenModeDropdown;
     [SerializeField] private Toggle _vSyncToggle;
     [SerializeField] private Toggle _aaToggle;
+    [SerializeField] private Slider _soundVolumeSlider;
 
     public void SetScreenMode()
     {
@@ -60,6 +61,12 @@ public class Settings : MonoBehaviour
                 QualitySettings.antiAliasing = 0;
                 break;
         }
+    }
+
+    public void SetAudioVolume()
+    {
+        FindObjectOfType<AudioManager>().GetLevelSongAudioSource().volume = _soundVolumeSlider.value;
+        FindObjectOfType<AudioManager>().GetSFXAudioSource().volume = _soundVolumeSlider.value;
     }
 
     public void QuitApp()

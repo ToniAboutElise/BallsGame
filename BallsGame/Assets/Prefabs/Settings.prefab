@@ -220,10 +220,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3044291360169717996}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
+        m_MethodName: SetAudioVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3044291358728200941
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,7 +2916,7 @@ MonoBehaviour:
   _screenModeDropdown: {fileID: 3044291358889696918}
   _vSyncToggle: {fileID: 3044291360687804820}
   _aaToggle: {fileID: 3044291360547143726}
-  _backButton: {fileID: 1328879327420856762}
+  _soundVolumeSlider: {fileID: 3044291358721399968}
 --- !u!1 &3044291360190745961
 GameObject:
   m_ObjectHideFlags: 0
@@ -4503,14 +4515,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1144624578859177593, guid: 5056f6107b78e7040965589f67424a77, type: 3}
   m_PrefabInstance: {fileID: 3044291359786913550}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1328879327420856762 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4057284123140847284, guid: 5056f6107b78e7040965589f67424a77, type: 3}
-  m_PrefabInstance: {fileID: 3044291359786913550}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
