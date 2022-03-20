@@ -1249,14 +1249,6 @@ PrefabInstance:
       propertyPath: _overWorldAnimator
       value: 
       objectReference: {fileID: 44598445}
-    - target: {fileID: 115541091550928415, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 115541092264798211, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2912189815828953170, guid: 253bac44616719f4d8a87458b07d1052, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 

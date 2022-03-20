@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &115541090732343856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &115541090756164950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
   _mainMenuUI: {fileID: 115541092696688024}
   _levelSelectionUI: {fileID: 115541091654643361}
   _customizeUI: {fileID: 115541091449518477}
-  _selectedFirstCustomizeButton: {fileID: 115541090756164951}
+  _selectedFirstCustomizeButton: {fileID: 888803575570541372}
   _overWorldManager: {fileID: 0}
 --- !u!1 &115541090961363314
 GameObject:
@@ -1634,7 +1634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &115541092491568717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1707,7 +1707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &115541092512564929
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4013,7 +4013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3044291359571533104, guid: d9782d96a5a026040bef477bfdab93d8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3044291360169717997, guid: d9782d96a5a026040bef477bfdab93d8, type: 3}
       propertyPath: m_Pivot.x
@@ -4109,7 +4109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3044291360504982316, guid: d9782d96a5a026040bef477bfdab93d8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3044291360547143727, guid: d9782d96a5a026040bef477bfdab93d8, type: 3}
       propertyPath: m_AnchorMax.y
