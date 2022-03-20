@@ -8,37 +8,23 @@ using UnityEngine;
 public class Settings : MonoBehaviour
 {
     [SerializeField] private TMP_Text _resolutionText;
-    [SerializeField] private TMP_Text _screenModeText; //?
+    [SerializeField] private TMP_Text _screenModeText;
     [SerializeField] private TMP_Dropdown _screenModeDropdown;
-    [SerializeField] Toggle _vSyncToggle;
-    [SerializeField] Toggle _aaToggle;
-
-    public Slider mouseSens;
-    public Text aa;
-    public GameObject Character;
-    public GameObject myCanvas;
-    public Toggle WindowedToggle;
-    bool isActive;
-    bool Vsync;
-    bool isWindowed;
-    public GameObject FPSAudioListener;
-    public GameObject flashlight;
+    [SerializeField] private Toggle _vSyncToggle;
+    [SerializeField] private Toggle _aaToggle;
 
     public void SetScreenMode()
     {
         switch (_screenModeDropdown.value)
         {
-            case 0: //Full Screen
+            case 0:
                 Screen.fullScreen = true;
-                isWindowed = false;
                 break;
-            case 1: //Full Screen Windowed
+            case 1:
                 Screen.fullScreen = true;
-                isWindowed = true;
                 break;
-            case 2: //Windowed
+            case 2:
                 Screen.fullScreen = false;
-                isWindowed = true;
                 break;
         }
     }

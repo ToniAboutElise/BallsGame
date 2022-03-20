@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelUI : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private EventSystem _eventSystem;
     [SerializeField] private GameObject _resumeButton;
+    [SerializeField] private Button _quitButton;
+
     private PlayerInputActions _playerInputActions;
 
     private void Awake()
     {
         _playerInputActions = new PlayerInputActions();
         _playerInputActions.Enable();
-    }
+
+        _quitButton.onClick.AddListener(QuitButtonExtraFunctions);
+    }    
 
     public void DisablePauseMenu()
     {
@@ -37,6 +42,11 @@ public class LevelUI : MonoBehaviour
             _pauseMenu.SetActive(true);
             _eventSystem.SetSelectedGameObject(_resumeButton);
         }
+    }
+
+    private void QuitButtonExtraFunctions()
+    {
+        FindObjectOfType<AudioManager>().GetLevelSongAudioSource().Stop();
     }
 
     private void LateUpdate()

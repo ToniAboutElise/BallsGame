@@ -257,6 +257,7 @@ MonoBehaviour:
   _pauseMenu: {fileID: 6541436445481033221}
   _eventSystem: {fileID: 37252850}
   _resumeButton: {fileID: 678996219790006621}
+  _quitButton: {fileID: 1484862516718259227}
 --- !u!1 &3490430041957118651
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,12 +991,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c54d30bc99d20409329b09c82a633e, type: 3}
---- !u!114 &3703982379342301822 stripped
+--- !u!114 &1484862516718259227 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1901299511007888660, guid: e3c54d30bc99d20409329b09c82a633e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4440196401484661617, guid: e3c54d30bc99d20409329b09c82a633e, type: 3}
   m_PrefabInstance: {fileID: 2956038718965600106}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678996219790006621}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -1021,3 +1022,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2335594674994304567, guid: e3c54d30bc99d20409329b09c82a633e, type: 3}
   m_PrefabInstance: {fileID: 2956038718965600106}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3703982379342301822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1901299511007888660, guid: e3c54d30bc99d20409329b09c82a633e, type: 3}
+  m_PrefabInstance: {fileID: 2956038718965600106}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678996219790006621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
