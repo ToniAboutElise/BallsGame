@@ -426,7 +426,7 @@ MonoBehaviour:
   _renderer: {fileID: 3478967}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &3478966
 BoxCollider:
@@ -1989,7 +1989,7 @@ MonoBehaviour:
   _renderer: {fileID: 37509133}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &37509132
 BoxCollider:
@@ -3002,7 +3002,7 @@ MonoBehaviour:
   _renderer: {fileID: 54125423}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &54125422
 BoxCollider:
@@ -5472,7 +5472,7 @@ MonoBehaviour:
   _renderer: {fileID: 114208814}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &114208813
 BoxCollider:
@@ -6062,7 +6062,7 @@ MonoBehaviour:
   _renderer: {fileID: 131203552}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &131203551
 BoxCollider:
@@ -6686,7 +6686,7 @@ MonoBehaviour:
   _renderer: {fileID: 137567267}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &137567266
 BoxCollider:
@@ -8250,7 +8250,7 @@ MonoBehaviour:
   _renderer: {fileID: 173923413}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &173923412
 BoxCollider:
@@ -8586,7 +8586,7 @@ MonoBehaviour:
   _renderer: {fileID: 178748432}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &178748431
 BoxCollider:
@@ -10176,7 +10176,7 @@ MonoBehaviour:
   _renderer: {fileID: 212678676}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &212678675
 BoxCollider:
@@ -10385,7 +10385,7 @@ MonoBehaviour:
   _renderer: {fileID: 215255704}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &215255703
 BoxCollider:
@@ -11986,7 +11986,7 @@ MonoBehaviour:
   _renderer: {fileID: 245251718}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &245251717
 BoxCollider:
@@ -12384,7 +12384,7 @@ MonoBehaviour:
   _renderer: {fileID: 250058597}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &250058596
 BoxCollider:
@@ -13383,7 +13383,7 @@ MonoBehaviour:
   _renderer: {fileID: 277484156}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &277484155
 BoxCollider:
@@ -17723,7 +17723,7 @@ MonoBehaviour:
   _renderer: {fileID: 346018044}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 346018044}
 --- !u!65 &346018043
@@ -18591,7 +18591,7 @@ MonoBehaviour:
   _renderer: {fileID: 358397650}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 358397650}
 --- !u!65 &358397649
@@ -19271,7 +19271,7 @@ MonoBehaviour:
   _renderer: {fileID: 373385206}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 373385206}
 --- !u!65 &373385205
@@ -19921,7 +19921,7 @@ MonoBehaviour:
   _renderer: {fileID: 386411857}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &386411856
 BoxCollider:
@@ -20988,7 +20988,7 @@ MonoBehaviour:
   _renderer: {fileID: 403776179}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 403776179}
 --- !u!65 &403776178
@@ -21327,7 +21327,7 @@ MonoBehaviour:
   _renderer: {fileID: 414793428}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &414793427
 BoxCollider:
@@ -23620,7 +23620,7 @@ MonoBehaviour:
   _renderer: {fileID: 453670593}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &453670592
 BoxCollider:
@@ -29290,7 +29290,7 @@ MonoBehaviour:
   _renderer: {fileID: 571661572}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 1347291455}
 --- !u!65 &571661571
@@ -29436,7 +29436,7 @@ MonoBehaviour:
   _renderer: {fileID: 574559691}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 2043503826}
 --- !u!65 &574559690
@@ -31042,7 +31042,7 @@ MonoBehaviour:
   _renderer: {fileID: 607600946}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &607600945
 BoxCollider:
@@ -32229,6 +32229,7 @@ MonoBehaviour:
   _requiredCollectables: 4
   _animation: {fileID: 624795210}
   _requiredCollectablesText: {fileID: 772999548}
+  _sfxDoorAudioClip: {fileID: 8300000, guid: cc194660f8c13384c99eac574685cd8d, type: 3}
 --- !u!1 &624798733
 GameObject:
   m_ObjectHideFlags: 0
@@ -32848,7 +32849,7 @@ MonoBehaviour:
   _renderer: {fileID: 641365178}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 641365178}
 --- !u!65 &641365177
@@ -33248,7 +33249,7 @@ MonoBehaviour:
   _renderer: {fileID: 647704964}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 1591175699}
 --- !u!65 &647704963
@@ -35335,7 +35336,7 @@ MonoBehaviour:
   _renderer: {fileID: 688847885}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &688847884
 BoxCollider:
@@ -36067,7 +36068,7 @@ MonoBehaviour:
   _renderer: {fileID: 703638287}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &703638286
 BoxCollider:
@@ -36638,6 +36639,7 @@ MonoBehaviour:
   _requiredCollectables: 22
   _animation: {fileID: 706645804}
   _requiredCollectablesText: {fileID: 1405740309}
+  _sfxDoorAudioClip: {fileID: 8300000, guid: cc194660f8c13384c99eac574685cd8d, type: 3}
 --- !u!1 &706668588
 GameObject:
   m_ObjectHideFlags: 0
@@ -37513,7 +37515,7 @@ MonoBehaviour:
   _renderer: {fileID: 719729461}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &719729460
 BoxCollider:
@@ -37945,7 +37947,7 @@ MonoBehaviour:
   _renderer: {fileID: 725729077}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &725729076
 BoxCollider:
@@ -39383,7 +39385,7 @@ MonoBehaviour:
   _renderer: {fileID: 752500476}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &752500475
 BoxCollider:
@@ -39778,7 +39780,7 @@ MonoBehaviour:
   _renderer: {fileID: 762989119}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &762989118
 BoxCollider:
@@ -40115,7 +40117,7 @@ MonoBehaviour:
   _renderer: {fileID: 765463631}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 1372091133}
 --- !u!65 &765463630
@@ -41358,7 +41360,7 @@ MonoBehaviour:
   _renderer: {fileID: 782527174}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &782527173
 BoxCollider:
@@ -47571,7 +47573,7 @@ MonoBehaviour:
   _renderer: {fileID: 905996997}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &905996996
 BoxCollider:
@@ -48097,7 +48099,7 @@ MonoBehaviour:
   _renderer: {fileID: 912697596}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 21395870}
 --- !u!65 &912697595
@@ -49354,7 +49356,7 @@ MonoBehaviour:
   _renderer: {fileID: 936691738}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &936691737
 BoxCollider:
@@ -50449,7 +50451,7 @@ MonoBehaviour:
   _renderer: {fileID: 957991229}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &957991228
 BoxCollider:
@@ -51113,7 +51115,7 @@ MonoBehaviour:
   _renderer: {fileID: 964319476}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 1548416004}
 --- !u!65 &964319475
@@ -51320,7 +51322,7 @@ MonoBehaviour:
   _renderer: {fileID: 969148800}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &969148799
 BoxCollider:
@@ -51877,7 +51879,7 @@ MonoBehaviour:
   _renderer: {fileID: 982327099}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 1614098477}
 --- !u!65 &982327098
@@ -56145,7 +56147,7 @@ MonoBehaviour:
   _renderer: {fileID: 1070897307}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1070897306
 BoxCollider:
@@ -56773,7 +56775,7 @@ MonoBehaviour:
   _renderer: {fileID: 1083420577}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1083420576
 BoxCollider:
@@ -58502,7 +58504,7 @@ MonoBehaviour:
   _renderer: {fileID: 1110722154}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1110722153
 BoxCollider:
@@ -60869,7 +60871,7 @@ MonoBehaviour:
   _renderer: {fileID: 1167375772}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1167375771
 BoxCollider:
@@ -62634,7 +62636,7 @@ MonoBehaviour:
   _renderer: {fileID: 1197943701}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 1950176943}
 --- !u!65 &1197943700
@@ -63411,7 +63413,7 @@ MonoBehaviour:
   _renderer: {fileID: 1212459190}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1212459189
 BoxCollider:
@@ -64054,7 +64056,7 @@ MonoBehaviour:
   _renderer: {fileID: 1233724664}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 170968533}
 --- !u!65 &1233724663
@@ -68080,7 +68082,7 @@ MonoBehaviour:
   _renderer: {fileID: 1304747601}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 1304747601}
 --- !u!65 &1304747600
@@ -68445,7 +68447,7 @@ MonoBehaviour:
   _renderer: {fileID: 1310362429}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1310362428
 BoxCollider:
@@ -69611,7 +69613,7 @@ MonoBehaviour:
   _renderer: {fileID: 1331886962}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1331886961
 BoxCollider:
@@ -76446,6 +76448,7 @@ MonoBehaviour:
   _requiredCollectables: 75
   _animation: {fileID: 1484554272}
   _requiredCollectablesText: {fileID: 437612783}
+  _sfxDoorAudioClip: {fileID: 8300000, guid: cc194660f8c13384c99eac574685cd8d, type: 3}
 --- !u!1 &1485077986
 GameObject:
   m_ObjectHideFlags: 0
@@ -76653,7 +76656,7 @@ MonoBehaviour:
   _renderer: {fileID: 1488432798}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1488432797
 BoxCollider:
@@ -78026,7 +78029,7 @@ MonoBehaviour:
   _renderer: {fileID: 1519240982}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1519240981
 BoxCollider:
@@ -78814,7 +78817,7 @@ MonoBehaviour:
   _renderer: {fileID: 1535940832}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1535940831
 BoxCollider:
@@ -80020,7 +80023,7 @@ MonoBehaviour:
   _renderer: {fileID: 1561656560}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 1561656560}
 --- !u!65 &1561656559
@@ -80134,7 +80137,7 @@ MonoBehaviour:
   _renderer: {fileID: 1563205441}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1563205440
 BoxCollider:
@@ -80597,7 +80600,7 @@ MonoBehaviour:
   _renderer: {fileID: 1569191958}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1569191957
 BoxCollider:
@@ -81446,7 +81449,7 @@ MonoBehaviour:
   _renderer: {fileID: 1590138825}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1590138824
 BoxCollider:
@@ -83283,7 +83286,7 @@ MonoBehaviour:
   _renderer: {fileID: 1624037086}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 1624037086}
 --- !u!65 &1624037085
@@ -84063,7 +84066,7 @@ MonoBehaviour:
   _renderer: {fileID: 1637339306}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1637339305
 BoxCollider:
@@ -84430,7 +84433,7 @@ MonoBehaviour:
   _renderer: {fileID: 1640084198}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1640084197
 BoxCollider:
@@ -86231,7 +86234,7 @@ MonoBehaviour:
   _renderer: {fileID: 1675640452}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1675640451
 BoxCollider:
@@ -89020,7 +89023,7 @@ MonoBehaviour:
   _renderer: {fileID: 1742705505}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1742705504
 BoxCollider:
@@ -93662,7 +93665,7 @@ MonoBehaviour:
   _renderer: {fileID: 1859551092}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1859551091
 BoxCollider:
@@ -94629,7 +94632,7 @@ MonoBehaviour:
   _renderer: {fileID: 1877305232}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 1877305232}
 --- !u!65 &1877305231
@@ -96956,7 +96959,7 @@ MonoBehaviour:
   _renderer: {fileID: 1934954367}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1934954366
 BoxCollider:
@@ -97879,7 +97882,7 @@ MonoBehaviour:
   _renderer: {fileID: 1957859260}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1957859259
 BoxCollider:
@@ -98681,7 +98684,7 @@ MonoBehaviour:
   _renderer: {fileID: 1971878324}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1971878323
 BoxCollider:
@@ -98921,7 +98924,7 @@ MonoBehaviour:
   _renderer: {fileID: 1976078699}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &1976078698
 BoxCollider:
@@ -101034,7 +101037,7 @@ MonoBehaviour:
   _renderer: {fileID: 2023629908}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &2023629907
 BoxCollider:
@@ -101517,7 +101520,7 @@ MonoBehaviour:
   _renderer: {fileID: 2029685599}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &2029685598
 BoxCollider:
@@ -103556,7 +103559,7 @@ MonoBehaviour:
   _renderer: {fileID: 2058080864}
   _nonCollected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
   _collected: {fileID: 2100000, guid: 620c7d4e197c15a43abceed3c682b1f1, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 948b2aa5c5db6c34eb2f81d15444db39, type: 3}
   collectableState: 2
   _meshRenderer: {fileID: 2058080864}
 --- !u!65 &2058080863
@@ -104157,7 +104160,7 @@ MonoBehaviour:
   _renderer: {fileID: 2067545850}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &2067545849
 BoxCollider:
@@ -104270,7 +104273,7 @@ MonoBehaviour:
   _renderer: {fileID: 2068060490}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &2068060489
 BoxCollider:
@@ -105868,7 +105871,7 @@ MonoBehaviour:
   _renderer: {fileID: 2101718662}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 2
   _bubble: {fileID: 698254310}
 --- !u!65 &2101718661
@@ -106688,7 +106691,7 @@ MonoBehaviour:
   _renderer: {fileID: 2124677020}
   _nonCollected: {fileID: 2100000, guid: f6833e88be2f8484d85836a9673a9a10, type: 2}
   _collected: {fileID: 2100000, guid: f1df37434682e664185d09951b45bf61, type: 2}
-  _collectedSFXAudioClip: {fileID: 0}
+  _collectedSFXAudioClip: {fileID: 8300000, guid: 39c35a762cd84064bb88987654d6f0f0, type: 3}
   collectableState: 0
 --- !u!65 &2124677019
 BoxCollider:
@@ -107769,6 +107772,7 @@ MonoBehaviour:
   _requiredCollectables: 13
   _animation: {fileID: 2144090180}
   _requiredCollectablesText: {fileID: 2135627555}
+  _sfxDoorAudioClip: {fileID: 8300000, guid: cc194660f8c13384c99eac574685cd8d, type: 3}
 --- !u!1 &2144240812
 GameObject:
   m_ObjectHideFlags: 0

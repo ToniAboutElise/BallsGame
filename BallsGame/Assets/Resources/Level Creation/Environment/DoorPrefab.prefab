@@ -131,6 +131,7 @@ MonoBehaviour:
   _requiredCollectables: 3
   _animation: {fileID: 53784421386754635}
   _requiredCollectablesText: {fileID: 5843136601121483111}
+  _sfxDoorAudioClip: {fileID: 8300000, guid: cc194660f8c13384c99eac574685cd8d, type: 3}
 --- !u!111 &53784421386754635
 Animation:
   m_ObjectHideFlags: 0

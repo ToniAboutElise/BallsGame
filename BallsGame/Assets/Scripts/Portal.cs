@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    public ParticleSystem teleportParticleSystem;
     [SerializeField] private Transform _otherPortal;
+    [SerializeField] private AudioClip _portalSFXAudioClip;
+    public ParticleSystem teleportParticleSystem;
     public Transform respawnTransform;
     private bool _canMoveCamera = false;
     private bool _reactivatingCooldown = false;
     private Player _player;
     private Transform _cameraTransform;
     private Vector3 _originalCameraLocalPosition;
-    public void Teleport(Transform camera, Player player)
+    public void Teleport(Transform camera, Player player, AudioSource sfxAudioSource = null)
     {
-        StartCoroutine(TeleportCR(camera, player));
+        StartCoroutine(TeleportCR(camera, player, sfxAudioSource));
     }
 
-    private IEnumerator TeleportCR(Transform camera, Player player)
+    private IEnumerator TeleportCR(Transform camera, Player player, AudioSource sfxAudioSource = null)
     {
-        //teleportParticleSystem.Play();
-
         if (_player == null)
         {
             _player = player;
+        }
+
+        if(sfxAudioSource != null)
+        {
+            sfxAudioSource.Stop();
+            sfxAudioSource.clip = _portalSFXAudioClip;
+            sfxAudioSource.Play();
         }
 
         _player.canRotate = false;
@@ -34,7 +40,6 @@ public class Portal : MonoBehaviour
         camera.SetParent(null);
         _otherPortal.GetComponent<BoxCollider>().enabled = false;
         player.transform.position = _otherPortal.GetComponent<Portal>().respawnTransform.position;
-        //_otherPortal.GetComponent<Portal>().teleportParticleSystem.Play();
         camera.SetParent(player.transform);
         MoveCamera(player, _cameraTransform, _originalCameraLocalPosition);
         yield return new WaitForSeconds(0.5f);

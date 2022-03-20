@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator _cameraAnimator;
     [SerializeField] private Animator _characterAnimator;
     [SerializeField] private Transform _auxForward;
+    private AudioManager _audioManager;
     private AudioSource _levelSongAudioSource;
     private AudioSource _sfxAudioSource;
     private Collectable _collectable;
@@ -50,6 +51,8 @@ public class Player : MonoBehaviour
     {
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
+
+        _audioManager = FindObjectOfType <AudioManager>();
     }
 
     private void Velocity()
@@ -92,9 +95,10 @@ public class Player : MonoBehaviour
         {
             _collectable = other.GetComponent<Collectable>();
 
-            if(_collectable.GetCollectedSFXAudioClip() != null) 
+            if(_collectable.GetCollectableState() != Collectable.CollectableState.Null && _collectable.GetCollectedSFXAudioClip() != null) 
             {
                 _sfxAudioSource = FindObjectOfType<AudioManager>().GetSFXAudioSource();
+                _sfxAudioSource.Stop();
                 _sfxAudioSource.clip = _collectable.GetCollectedSFXAudioClip();
                 _sfxAudioSource.Play();
             }
@@ -122,11 +126,11 @@ public class Player : MonoBehaviour
         }
         else if (other.tag == "Portal")
         {
-            other.GetComponent<Portal>().Teleport(_camera.transform, this);
+            other.GetComponent<Portal>().Teleport(_camera.transform, this, _sfxAudioSource);
         }
         else if (other.tag == "ColorSwitch")
         {
-            other.GetComponent<ColorSwitch>().ColorSwitchAction();
+            other.GetComponent<ColorSwitch>().ColorSwitchAction(_sfxAudioSource);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -240,6 +244,10 @@ public class Player : MonoBehaviour
     {
         LevelEndSaveFile.SaveFileEndLevel(_levelManager.nextLevel);
         yield return new WaitForSeconds(5);
+        if(_levelSongAudioSource == null)
+        {
+            _levelSongAudioSource = _audioManager.GetLevelSongAudioSource();
+        }
         _levelSongAudioSource.Stop();
         _levelSongAudioSource.clip = null;
         SceneManager.LoadSceneAsync("LevelSelection", LoadSceneMode.Single);

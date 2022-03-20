@@ -5205,8 +5205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a24b4598166805c439888c12da2ec796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportParticleSystem: {fileID: 6131270570256212773}
   _otherPortal: {fileID: 0}
+  _portalSFXAudioClip: {fileID: 8300000, guid: 29c5ca80df5c15a4993030b71a534b6b, type: 3}
+  teleportParticleSystem: {fileID: 6131270570256212773}
   respawnTransform: {fileID: 7163612977484182231}
 --- !u!65 &7749546972270496406
 BoxCollider:

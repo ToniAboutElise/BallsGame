@@ -8,17 +8,13 @@ public class ColorSwitch : MonoBehaviour
     [SerializeField] private Material _red;
     [SerializeField] private Material _blue;
     [SerializeField] private Renderer _renderer;
+    [SerializeField] private AudioClip _sfxColorSwitchAudioClip;
 
     private CurrentColor _currentColor = CurrentColor.Red;
     private enum CurrentColor
     {
         Blue,
         Red
-    }
-
-    private void Start()
-    {
-        
     }
 
     public void SetNewColor()
@@ -36,9 +32,13 @@ public class ColorSwitch : MonoBehaviour
         }
     }
 
-    public void ColorSwitchAction()
+    public void ColorSwitchAction(AudioSource sfxAudioSource = null)
     {
-        foreach(ColorSwitch colorSwitch in _levelManager.GetColorSwitches())
+        sfxAudioSource.Stop();
+        sfxAudioSource.clip = _sfxColorSwitchAudioClip;
+        sfxAudioSource.Play();
+
+        foreach (ColorSwitch colorSwitch in _levelManager.GetColorSwitches())
         {
             colorSwitch.SetNewColor();
         }

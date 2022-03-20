@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
     [SerializeField] private int _requiredCollectables;
     [SerializeField] private Animation _animation;
     [SerializeField] private TMP_Text _requiredCollectablesText;
+    [SerializeField] private AudioClip _sfxDoorAudioClip;
 
     private void Start()
     {
@@ -26,6 +27,10 @@ public class Door : MonoBehaviour
 
     private void OpenDoor()
     {
+        AudioSource sfxAudioSource = FindObjectOfType<AudioManager>().GetSFXAudioSource();
+        sfxAudioSource.Stop();
+        sfxAudioSource.clip = _sfxDoorAudioClip;
+        sfxAudioSource.Play();
         _animation.Play();
     }
 }
