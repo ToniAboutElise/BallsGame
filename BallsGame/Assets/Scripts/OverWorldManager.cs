@@ -165,7 +165,7 @@ public class OverWorldManager : MonoBehaviour
 
     private void LoadLevel()
     {
-        SceneManager.LoadSceneAsync(currentSelectedPill.levelNumber, LoadSceneMode.Single);
+        SceneManager.LoadScene(currentSelectedPill.levelNumber, LoadSceneMode.Single);
     }
     private void Update()
     {

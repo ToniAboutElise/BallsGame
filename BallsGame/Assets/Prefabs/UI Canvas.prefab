@@ -634,6 +634,8 @@ MonoBehaviour:
   _mainMenuUI: {fileID: 115541092696688024}
   _levelSelectionUI: {fileID: 115541091654643361}
   _customizeUI: {fileID: 115541091449518477}
+  _customizeKeyText: {fileID: 115541091859714091}
+  _levelsKeyText: {fileID: 115541092005763552}
   _selectedFirstCustomizeButton: {fileID: 888803575570541372}
   _overWorldManager: {fileID: 0}
 --- !u!1 &115541090961363314

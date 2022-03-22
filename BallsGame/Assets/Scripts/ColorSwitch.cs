@@ -34,9 +34,12 @@ public class ColorSwitch : MonoBehaviour
 
     public void ColorSwitchAction(AudioSource sfxAudioSource = null)
     {
-        sfxAudioSource.Stop();
-        sfxAudioSource.clip = _sfxColorSwitchAudioClip;
-        sfxAudioSource.Play();
+        if(sfxAudioSource != null)
+        { 
+            sfxAudioSource.Stop();
+            sfxAudioSource.clip = _sfxColorSwitchAudioClip;
+            sfxAudioSource.Play();
+        }
 
         foreach (ColorSwitch colorSwitch in _levelManager.GetColorSwitches())
         {
