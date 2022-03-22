@@ -128,13 +128,10 @@ public class OverWorldManager : MonoBehaviour
         selectedPill.unlocked = true;
         selectedPill.SetSelected(true);
         selectedPill.SetLockState(true);
-
-
     }
 
     private void UpdateSelectedLevel()
     {
-
         if (_playerInputActions.Player.Move.ReadValue<Vector2>().x > 0.3f && _canChangeSelectedLevel == true)
         {
             _canChangeSelectedLevel = false;
@@ -176,6 +173,5 @@ public class OverWorldManager : MonoBehaviour
             _loadingLevel = true;
             LoadLevel();
         }
-        
     }
 }
