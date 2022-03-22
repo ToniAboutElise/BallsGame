@@ -14,6 +14,7 @@ public class LevelUI : MonoBehaviour
     [SerializeField] private GameObject _resumeButton;
     [SerializeField] private Button _quitButton;
     [SerializeField] private TMP_Text _ballsLeftText;
+    [SerializeField] private TMP_Text _slashText;
     [SerializeField] private TMP_Text _totalBalls;
     private int collectablesAmount = 0;
     private int collectablesGrabbed = 0;
@@ -58,6 +59,7 @@ public class LevelUI : MonoBehaviour
         if(collectablesGrabbed == collectablesAmount)
         {
             _ballsLeftText.color = Color.yellow;
+            _slashText.color = Color.yellow;
             _totalBalls.color = Color.yellow;
         }
     }

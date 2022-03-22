@@ -527,6 +527,7 @@ MonoBehaviour:
   _resumeButton: {fileID: 678996219790006621}
   _quitButton: {fileID: 1484862516718259227}
   _ballsLeftText: {fileID: 4365253598987037675}
+  _slashText: {fileID: 518730495695611793}
   _totalBalls: {fileID: 1035367843573808555}
 --- !u!1 &3490430042370311376
 GameObject:
