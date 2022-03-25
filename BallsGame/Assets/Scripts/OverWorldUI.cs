@@ -25,6 +25,17 @@ public class OverWorldUI : MonoBehaviour
         _playerInputActions.Player.Enable();
         _playerInput.currentActionMap = _playerInputActions.Player;
         _customizeUI.SetActive(false);
+        CheckUISectionToShow();
+    }
+
+    private void CheckUISectionToShow()
+    {
+        if(GameManagerSingleton.GetInstance().GetHasALevelBeenPlayed() == true)
+        {
+            _mainMenuUI.SetActive(false);
+            _overWorldManager.AllowNavigation();
+            GoToLevelSelection();
+        }
     }
 
     private void CheckInputActions()
@@ -33,20 +44,11 @@ public class OverWorldUI : MonoBehaviour
         { 
             if (_playerInputActions.Player.L1.IsPressed())
             {
-                _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
-                _overWorldAnimator.ResetTrigger("Customize");
-                _overWorldAnimator.SetTrigger("LevelSelection");
-                _customizeUI.SetActive(false);
-                _levelSelectionUI.SetActive(true);
+                GoToLevelSelection();
             }
             else if (_playerInputActions.Player.R1.IsPressed())
             {
-                _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.Customize;
-                _overWorldAnimator.ResetTrigger("LevelSelection");
-                _overWorldAnimator.SetTrigger("Customize");
-                _levelSelectionUI.SetActive(false);
-                _customizeUI.SetActive(true);
-                _selectedFirstCustomizeButton.Select();
+                GoToCustomize();
             }
         }
     }
@@ -70,6 +72,25 @@ public class OverWorldUI : MonoBehaviour
                 _levelSelectionUI.SetActive(true);
                 break;
         }
+    }
+
+    private void GoToLevelSelection()
+    {
+        _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
+        _overWorldAnimator.ResetTrigger("Customize");
+        _overWorldAnimator.SetTrigger("LevelSelection");
+        _customizeUI.SetActive(false);
+        _levelSelectionUI.SetActive(true);
+    }
+
+    private void GoToCustomize() 
+    {
+        _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.Customize;
+        _overWorldAnimator.ResetTrigger("LevelSelection");
+        _overWorldAnimator.SetTrigger("Customize");
+        _levelSelectionUI.SetActive(false);
+        _customizeUI.SetActive(true);
+        _selectedFirstCustomizeButton.Select();
     }
 
     private void RotatePlayerShowcase()

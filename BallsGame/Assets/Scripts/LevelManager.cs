@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(Countdown());
 
         GameManagerSingleton.GetInstance().PlaceCostumeIntoPlayer();
+        GameManagerSingleton.GetInstance().SetHasALevelBeenPlayed(true);
     }
 
     public void CollectableGrabbed(Collectable collectable)
