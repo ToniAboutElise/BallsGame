@@ -20,7 +20,7 @@ public class OverWorldUI : MonoBehaviour
     [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private Button _firstSelectedMainMenuButton;
 
-    private void Awake()
+    private void Start()
     {
         _playerInputActions = new PlayerInputActions();
         _playerInputActions.Player.Enable();
