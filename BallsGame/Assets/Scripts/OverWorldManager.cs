@@ -37,15 +37,22 @@ public class OverWorldManager : MonoBehaviour
         CheckUnlockedLevels();
     }
 
-    public void AllowNavigation()
+    public void AllowNavigation(bool allow)
     {
-        StartCoroutine(AllowLevelNavigationCR());
+        StartCoroutine(AllowLevelNavigationCR(allow));
     }
 
-    private IEnumerator AllowLevelNavigationCR()
+    private IEnumerator AllowLevelNavigationCR(bool allow)
     {
-        yield return new WaitForSeconds(1.7f);
-        _canEnterLevel = true;
+        if(allow == true) 
+        { 
+            yield return new WaitForSeconds(0.5f);
+        }
+        else
+        {
+            yield return null;
+        }
+        _canEnterLevel = allow;
     }
 
     private void ResetLevelsUnlocked()

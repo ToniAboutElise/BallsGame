@@ -24,6 +24,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "HeelButtonDown",
+                    "type": "PassThrough",
+                    "id": "b08ec388-5a96-4853-a2d1-04be187fa215",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "L1",
                     "type": "Button",
                     "id": "b999b327-85e6-4e4e-9b70-612f96c61817",
@@ -300,6 +309,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94e7fe48-d036-4cfe-a17b-bd187d154ec0",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeelButtonDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5730126c-f328-41db-94f0-f4c43bfaebe5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeelButtonDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "832dcf7c-9835-4ccb-aa5f-22ab7ccb360d",
+                    "path": "<Keyboard>/delete",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeelButtonDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

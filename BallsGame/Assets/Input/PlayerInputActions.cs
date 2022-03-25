@@ -46,6 +46,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""HeelButtonDown"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""b08ec388-5a96-4853-a2d1-04be187fa215"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""L1"",
                     ""type"": ""Button"",
                     ""id"": ""b999b327-85e6-4e4e-9b70-612f96c61817"",
@@ -324,6 +333,39 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94e7fe48-d036-4cfe-a17b-bd187d154ec0"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeelButtonDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5730126c-f328-41db-94f0-f4c43bfaebe5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeelButtonDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""832dcf7c-9835-4ccb-aa5f-22ab7ccb360d"",
+                    ""path"": ""<Keyboard>/delete"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HeelButtonDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -395,6 +437,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_FaceButtonDown = m_Player.FindAction("FaceButtonDown", throwIfNotFound: true);
+        m_Player_HeelButtonDown = m_Player.FindAction("HeelButtonDown", throwIfNotFound: true);
         m_Player_L1 = m_Player.FindAction("L1", throwIfNotFound: true);
         m_Player_R1 = m_Player.FindAction("R1", throwIfNotFound: true);
         m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
@@ -460,6 +503,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_FaceButtonDown;
+    private readonly InputAction m_Player_HeelButtonDown;
     private readonly InputAction m_Player_L1;
     private readonly InputAction m_Player_R1;
     private readonly InputAction m_Player_Camera;
@@ -470,6 +514,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @FaceButtonDown => m_Wrapper.m_Player_FaceButtonDown;
+        public InputAction @HeelButtonDown => m_Wrapper.m_Player_HeelButtonDown;
         public InputAction @L1 => m_Wrapper.m_Player_L1;
         public InputAction @R1 => m_Wrapper.m_Player_R1;
         public InputAction @Camera => m_Wrapper.m_Player_Camera;
@@ -489,6 +534,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @FaceButtonDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFaceButtonDown;
                 @FaceButtonDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFaceButtonDown;
                 @FaceButtonDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFaceButtonDown;
+                @HeelButtonDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeelButtonDown;
+                @HeelButtonDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeelButtonDown;
+                @HeelButtonDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnHeelButtonDown;
                 @L1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnL1;
                 @L1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnL1;
                 @L1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnL1;
@@ -511,6 +559,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @FaceButtonDown.started += instance.OnFaceButtonDown;
                 @FaceButtonDown.performed += instance.OnFaceButtonDown;
                 @FaceButtonDown.canceled += instance.OnFaceButtonDown;
+                @HeelButtonDown.started += instance.OnHeelButtonDown;
+                @HeelButtonDown.performed += instance.OnHeelButtonDown;
+                @HeelButtonDown.canceled += instance.OnHeelButtonDown;
                 @L1.started += instance.OnL1;
                 @L1.performed += instance.OnL1;
                 @L1.canceled += instance.OnL1;
@@ -576,6 +627,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnFaceButtonDown(InputAction.CallbackContext context);
+        void OnHeelButtonDown(InputAction.CallbackContext context);
         void OnL1(InputAction.CallbackContext context);
         void OnR1(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);

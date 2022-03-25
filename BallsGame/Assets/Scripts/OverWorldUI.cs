@@ -18,6 +18,7 @@ public class OverWorldUI : MonoBehaviour
     [SerializeField] private Button _selectedFirstCustomizeButton;
     [SerializeField] private OverWorldManager _overWorldManager;
     [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private Button _firstSelectedMainMenuButton;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class OverWorldUI : MonoBehaviour
         if(GameManagerSingleton.GetInstance().GetHasALevelBeenPlayed() == true)
         {
             _mainMenuUI.SetActive(false);
-            _overWorldManager.AllowNavigation();
+            _overWorldManager.AllowNavigation(true);
             GoToLevelSelection();
         }
     }
@@ -50,6 +51,17 @@ public class OverWorldUI : MonoBehaviour
             {
                 GoToCustomize();
             }
+            else if (_playerInputActions.Player.HeelButtonDown.IsPressed())
+            {
+                _overWorldManager.AllowNavigation(false);
+                GoToSection();
+                _overWorldAnimator.ResetTrigger("Customize");
+                _overWorldAnimator.ResetTrigger("LevelSelection");
+                _overWorldAnimator.SetTrigger("MainMenu");
+                _levelSelectionUI.SetActive(false);
+                _customizeUI.SetActive(false);
+                _firstSelectedMainMenuButton.Select();
+            }
         }
     }
 
@@ -57,12 +69,13 @@ public class OverWorldUI : MonoBehaviour
     {
         switch (_overWorldManager.currentOverWorldSection)
         {
-            case OverWorldManager.CurrentOverWorldSection.LevelSelection:
+            default:
                 _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.MainMenu;
                 _overWorldAnimator.ResetTrigger("LevelSelection");
                 _overWorldAnimator.SetTrigger("MainMenu");
                 _mainMenuUI.SetActive(true);
                 _levelSelectionUI.SetActive(false);
+                _customizeUI.SetActive(false);
                 break;
             case OverWorldManager.CurrentOverWorldSection.MainMenu:
                 _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
@@ -70,6 +83,7 @@ public class OverWorldUI : MonoBehaviour
                 _overWorldAnimator.SetTrigger("LevelSelection");
                 _mainMenuUI.SetActive(false);
                 _levelSelectionUI.SetActive(true);
+                _customizeUI.SetActive(false);
                 break;
         }
     }
@@ -78,6 +92,7 @@ public class OverWorldUI : MonoBehaviour
     {
         _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.LevelSelection;
         _overWorldAnimator.ResetTrigger("Customize");
+        _overWorldAnimator.ResetTrigger("MainMenu");
         _overWorldAnimator.SetTrigger("LevelSelection");
         _customizeUI.SetActive(false);
         _levelSelectionUI.SetActive(true);
@@ -87,6 +102,7 @@ public class OverWorldUI : MonoBehaviour
     {
         _overWorldManager.currentOverWorldSection = OverWorldManager.CurrentOverWorldSection.Customize;
         _overWorldAnimator.ResetTrigger("LevelSelection");
+        _overWorldAnimator.ResetTrigger("MainMenu");
         _overWorldAnimator.SetTrigger("Customize");
         _levelSelectionUI.SetActive(false);
         _customizeUI.SetActive(true);
