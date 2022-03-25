@@ -81,6 +81,7 @@ MonoBehaviour:
   _red: {fileID: 2100000, guid: e19e0511681951d44befc32a8e0ea872, type: 2}
   _blue: {fileID: 2100000, guid: f248b16d0737a91489e64bb4ca44a30c, type: 2}
   _renderer: {fileID: 4744095137369897239}
+  _sfxColorSwitchAudioClip: {fileID: 8300000, guid: a7ea4a6d3cdfde8418b69d9227f2f315, type: 3}
 --- !u!65 &8532014090672060159
 BoxCollider:
   m_ObjectHideFlags: 0

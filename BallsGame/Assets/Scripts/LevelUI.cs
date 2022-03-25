@@ -23,6 +23,9 @@ public class LevelUI : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         _playerInputActions = new PlayerInputActions();
         _playerInputActions.Enable();
 
@@ -43,6 +46,8 @@ public class LevelUI : MonoBehaviour
     {
         Time.timeScale = 1;
         _pauseMenu.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState =CursorLockMode.Locked;
     }
 
     public void BackToMenu()
@@ -71,6 +76,8 @@ public class LevelUI : MonoBehaviour
             Time.timeScale = 0;
             _pauseMenu.SetActive(true);
             _eventSystem.SetSelectedGameObject(_resumeButton);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

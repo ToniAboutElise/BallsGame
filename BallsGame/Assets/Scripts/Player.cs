@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
         playerInputActions.Player.Enable();
 
         _audioManager = FindObjectOfType <AudioManager>();
+        _sfxAudioSource = FindObjectOfType<AudioManager>().GetSFXAudioSource();
     }
 
     private void Velocity()
@@ -97,7 +98,6 @@ public class Player : MonoBehaviour
 
             if(_collectable.GetCollectableState() != Collectable.CollectableState.Null && _collectable.GetCollectedSFXAudioClip() != null) 
             {
-                _sfxAudioSource = FindObjectOfType<AudioManager>().GetSFXAudioSource();
                 _sfxAudioSource.Stop();
                 _sfxAudioSource.clip = _collectable.GetCollectedSFXAudioClip();
                 _sfxAudioSource.Play();
