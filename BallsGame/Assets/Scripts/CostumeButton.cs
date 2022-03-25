@@ -11,6 +11,7 @@ public class CostumeButton : MonoBehaviour, ISelectHandler
     public void OnSelect(BaseEventData eventData)
     {
         LoadCostume();
+        GameManagerSingleton.GetInstance().selectedCostume = costume;
     }
 
     public void SetCostume()
